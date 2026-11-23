@@ -1,0 +1,44 @@
+/* Global styles, keyframes and responsive rules for the PawKeep landing page. */
+body{margin:0;background:#FFFFFF}
+*{box-sizing:border-box}
+a{color:#232326}a:hover{color:#C2415B}
+button,input{font-family:inherit}
+:focus-visible{outline:3px solid #C2415B;outline-offset:3px}
+details summary{cursor:pointer;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details[open] .faq-plus{transform:rotate(45deg);background:#232326;color:#FFFFFF}
+.faq-plus{transition:transform .25s ease,background .25s ease}
+@keyframes pkRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes pkPop{0%{opacity:0;transform:scale(.85)}100%{opacity:1;transform:none}}
+@keyframes pkFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes pkFly{0%,100%{transform:translate(0,0)}25%{transform:translate(6px,-8px)}50%{transform:translate(-4px,-14px)}75%{transform:translate(-8px,-4px)}}
+@keyframes pkTwinkle{0%,100%{opacity:.2;transform:scale(.6)}50%{opacity:1;transform:scale(1)}}
+@keyframes pkPulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.8)}100%{box-shadow:0 0 0 24px rgba(255,255,255,0)}}
+@keyframes pkNudge{0%,100%{transform:translateX(-50%)}50%{transform:translateX(calc(-50% + 12px))}}
+@keyframes pkLive{0%,100%{opacity:1}50%{opacity:.35}}
+.pk-rise{animation:pkRise .8s cubic-bezier(.2,.8,.2,1) both}
+.pk-d1{animation-delay:.08s}.pk-d2{animation-delay:.16s}.pk-d3{animation-delay:.24s}.pk-d4{animation-delay:.32s}.pk-d5{animation-delay:.4s}
+.pk-pop{animation:pkPop .45s cubic-bezier(.2,.8,.2,1) both}
+.pk-float{animation:pkFloat 6s ease-in-out infinite}
+.pk-fly{animation:pkFly 2.4s ease-in-out infinite;transform-box:fill-box}
+.pk-twinkle{animation:pkTwinkle 2.2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.pk-knob-pulse{animation:pkPulse 1.6s ease-out infinite}
+.pk-nudge{animation:pkNudge 1.8s ease-in-out infinite}
+.pk-live{animation:pkLive 1.4s ease-in-out infinite}
+.pk-tile{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.pk-tile:hover{transform:translateY(-4px)}
+.pk-range{-webkit-appearance:none;appearance:none;background:transparent;margin:0;cursor:ew-resize}
+.pk-range::-webkit-slider-thumb{-webkit-appearance:none;width:80px;height:600px;background:transparent;cursor:ew-resize}
+.pk-range::-moz-range-thumb{width:80px;height:600px;background:transparent;border:none;cursor:ew-resize}
+.pk-range:focus-visible + .pk-handle .pk-knob{outline:4px solid #C2415B;outline-offset:4px}
+a[style*="border-radius: 14px"],button{transition:transform .2s ease,background .2s ease}
+a[style*="border-radius: 14px"]:hover,button[type="submit"]:hover{transform:translateY(-2px)}
+@supports (animation-timeline: view()){.pk-reveal{animation:pkRise linear both;animation-timeline:view();animation-range:entry 0% cover 20%}}
+@media (max-width: 900px){.bento > *{grid-column:1 / -1 !important;grid-row:auto !important}}
+@media (prefers-reduced-motion: reduce){.pk-rise,.pk-pop,.pk-float,.pk-fly,.pk-twinkle,.pk-knob-pulse,.pk-nudge,.pk-live,.pk-reveal{animation:none!important}.pk-tile,.faq-plus{transition:none}}
+
+@keyframes pkStep{0%,100%{opacity:.15}20%,40%{opacity:1}}
+.pk-step{animation:pkStep 4.2s ease-in-out infinite}
+.pk-obj{transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+button:hover .pk-obj{transform:translateY(-4px) rotate(-6deg) scale(1.06)}
+@media (prefers-reduced-motion: reduce){.pk-step{animation:none!important;opacity:.6}.pk-obj{transition:none}}
