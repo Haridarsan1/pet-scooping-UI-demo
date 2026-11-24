@@ -107,8 +107,8 @@ export function StoryScroll({ petName: globalPetName, petType: globalPetType }) 
     },
     {
       kicker: isCat ? 'Litter box care' : 'Poop scooping',
-      title: 'Every week, Jamie scoops it.',
-      body: 'Your dedicated caretaker clears the mess, bags it and hauls it away, on a schedule you set once.'
+      title: 'Every week, our care team scoops it.',
+      body: 'Our field care team clears the mess, bags it and hauls it away, on a recurring cadence you choose.'
     },
     {
       kicker: 'Grooming',
@@ -585,10 +585,10 @@ export function StoryScroll({ petName: globalPetName, petType: globalPetType }) 
                   style={sx(`position: absolute; left: 3%; top: 5%; display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 14px; background: #FFFFFF; box-shadow: 0 10px 24px rgba(0,0,0,.25); transition: opacity .6s ease; ${show(ch === 1)}`)}
                 >
                   <span style={{ width: '34px', height: '34px', borderRadius: '10px', background: '#C2415B', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '12px' }}>
-                    JR
+                    PK
                   </span>
                   <span style={{ fontSize: '13px', lineHeight: 1.35 }}>
-                    <strong>Jamie is scooping</strong><br />
+                    <strong>Care team is scooping</strong><br />
                     {piles === 0 ? 'Yard is spotless! Waste bagged.' : `${piles} piles left to haul`}
                   </span>
                 </div>

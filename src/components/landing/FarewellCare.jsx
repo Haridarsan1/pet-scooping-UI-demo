@@ -6,11 +6,11 @@ export function FarewellCare({ onOpenFarewellModal }) {
   const offerings = [
     {
       title: 'Peaceful Passing at Home',
-      description: 'A compassionate, state-licensed partner veterinarian visits your home so your companion rests in their favorite sunny spot.'
+      description: 'Coordination with an independent, state-licensed partner veterinarian who visits your home so your companion rests in comfort.'
     },
     {
       title: 'Dignified Aftercare Transport',
-      description: 'Private cremation or communal burial coordination handled gently with accredited local pet memorial partners.'
+      description: 'Private cremation or communal burial coordination arranged gently with local pet memorial providers.'
     },
     {
       title: 'Handcrafted Keepsakes',
@@ -18,7 +18,7 @@ export function FarewellCare({ onOpenFarewellModal }) {
     },
     {
       title: 'Family Bereavement Support',
-      description: 'Complimentary guidance sessions with certified pet-loss counselors for adults and children navigating grief.'
+      description: 'Supportive guidance and grief resources for adults and children navigating pet bereavement.'
     }
   ];
 
@@ -114,6 +114,9 @@ export function FarewellCare({ onOpenFarewellModal }) {
 
           <p style={{ margin: 0, fontSize: '14px', color: '#6A5F6D' }}>
             Available to all pet families 7 days a week • No active subscription required
+          </p>
+          <p style={{ margin: '6px 0 0', fontSize: '12px', color: '#877B8A' }}>
+            Notice: PawKeep provides care coordination and grief support resources. In-home clinical veterinary euthanasia is performed exclusively by independent licensed veterinary professionals.
           </p>
         </div>
       </div>

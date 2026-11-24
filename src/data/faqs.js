@@ -4,12 +4,12 @@ export const FAQS = [
   {
     id: 'whats-included',
     question: 'What is included in a PawKeep subscription?',
-    answer: 'PawKeep brings recurring pet care under one coordinated monthly plan. Depending on what you choose, your plan can include weekly yard waste removal or cat litter box maintenance, in-home grooming, routine home veterinary checkups with licensed partner vets, and certified dog training sessions. You only pay for what you select, all bundled into one transparent monthly bill.'
+    answer: 'PawKeep brings recurring pet care under one coordinated monthly plan. Depending on what you choose, your plan can include weekly yard waste removal or cat litter box maintenance, in-home grooming, routine home veterinary checkups with licensed partner vets, and positive reinforcement dog training sessions. You only pay for what you select, all bundled into one transparent monthly bill.'
   },
   {
     id: 'select-individual',
     question: 'Can I select individual services or must I bundle everything?',
-    answer: 'You have complete freedom to choose only the services your pet needs. If you only want weekly yard scooping, you can subscribe to just that. If you want grooming and veterinary visits, you can combine them. You can adjust, add, or pause individual services from your member dashboard.'
+    answer: 'You have complete freedom to choose only the services your pet needs. If you only want weekly yard scooping, you can subscribe to just that. If you want grooming and veterinary visits, you can combine them. You can request service and frequency adjustments from your member dashboard or Care Coordinator.'
   },
   {
     id: 'multiple-pets',
@@ -29,7 +29,7 @@ export const FAQS = [
   {
     id: 'how-appointments-work',
     question: 'How do appointments and visits work? Do I need to be home?',
-    answer: 'For exterior yard waste removal, you do not need to be home provided our caretaker has gate access and pets are indoors. A time-stamped photo confirmation of the secured gate is recorded. For in-home services like grooming, veterinary care, and training sessions, an adult household member must be present.'
+    answer: 'For exterior yard waste removal, you do not need to be home provided our team has gate access and pets are indoors; caretakers perform a gate latch check upon departure. For in-home services like grooming, veterinary care, and training sessions, an adult household member must be present.'
   },
   {
     id: 'pause-or-change',
@@ -54,7 +54,7 @@ export const FAQS = [
   {
     id: 'provider-unavailable',
     question: 'What happens when my regular caretaker is sick or unavailable?',
-    answer: 'Consistency is our priority. If your primary caretaker is unavailable due to illness or scheduling conflict, an authorized backup caretaker from your local team will be assigned to cover your scheduled visit based on your pet’s profile.'
+    answer: 'Consistency is our goal. If a primary caretaker is unavailable due to illness or scheduling, PawKeep coordinates coverage with an authorized local caretaker based on your pet profile.'
   },
   {
     id: 'farewell-standalone',

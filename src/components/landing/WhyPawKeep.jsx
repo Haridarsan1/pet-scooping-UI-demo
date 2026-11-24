@@ -7,22 +7,22 @@ export function WhyPawKeep({ onBuildPlan }) {
     {
       feature: 'Caregiver Familiarity',
       bookingApps: 'Whoever is free that day; random stranger each booking',
-      pawKeep: 'The same dedicated caretaker for routine visits, plus licensed partner vets'
+      pawKeep: 'A consistent team for routine visits, plus licensed partner vets'
     },
     {
       feature: 'Scheduling Effort',
       bookingApps: 'Search profiles, message sitters, and re-book every time',
-      pawKeep: 'Set once on your chosen cadence; repeats automatically'
+      pawKeep: 'Planned on a predictable recurring monthly cadence'
     },
     {
       feature: 'Yard Scooping & Waste',
       bookingApps: 'Rarely offered; must find an unrelated lawn scoop service',
-      pawKeep: 'Included in your plan with photo gate latch verification'
+      pawKeep: 'Bundled into your routine plan with gate-closure check'
     },
     {
       feature: 'Preventative Veterinary Care',
       bookingApps: 'Not offered; requires car trips & clinic waiting rooms',
-      pawKeep: 'Home wellness visits by state-licensed partner veterinarians'
+      pawKeep: 'Routine home wellness checkups coordinated with licensed partner veterinarians'
     },
     {
       feature: 'Cat Litter Box Maintenance',
@@ -32,7 +32,7 @@ export function WhyPawKeep({ onBuildPlan }) {
     {
       feature: 'Billing & Subscriptions',
       bookingApps: 'Pay per booking with fluctuating surge fees & app surcharges',
-      pawKeep: 'One transparent monthly subscription invoice with zero hidden fees'
+      pawKeep: 'One transparent monthly subscription invoice with clear itemized pricing'
     }
   ];
 
@@ -203,7 +203,7 @@ export function WhyPawKeep({ onBuildPlan }) {
             >
               <div style={{ flex: '1 1 240px' }}>
                 <p style={{ margin: 0, fontSize: '14px', lineHeight: 1.5 }}>
-                  <strong style={{ color: 'var(--pk-blush)' }}>The PawKeep Care Guarantee:</strong> If any yard visit or grooming session is not 100% satisfactory, your caretaker returns within 24 hours to make it right, free.
+                  <strong style={{ color: 'var(--pk-blush)' }}>Care Delivery Standards:</strong> Designed to provide predictable recurring visits, transparent itemized billing, and coordination with independent licensed veterinary clinics.
                 </p>
               </div>
               <Button variant="secondary" size="md" href="#plan" onClick={onBuildPlan}>

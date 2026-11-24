@@ -222,7 +222,7 @@ export function PricingBuilder({ pricing, onProceedToCheckout }) {
                     <span style={{ fontSize: '12px', fontWeight: 800, color: 'var(--pk-coral)' }}>+$49/mo</span>
                   </div>
                   <p style={{ margin: '6px 0 12px', fontSize: '12px', lineHeight: 1.4, color: 'var(--pk-text-secondary)' }}>
-                    Quarterly exams & 24/7 chat with licensed partner veterinarians.
+                    Quarterly exams & messaging coordination with licensed partner veterinarians.
                   </p>
                   <button
                     type="button"

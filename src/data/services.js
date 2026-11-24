@@ -168,7 +168,7 @@ export const SERVICES = [
     whatsIncluded: [
       'Consultation with a dedicated farewell care coordinator',
       'In-home passing conducted by a licensed partner veterinarian',
-      'Gentle transfer to accredited local pet memorial partners',
+      'Gentle transfer to local pet memorial partners',
       'Commemorative keepsake options (clay paw print, fur clipping)',
       'Pet loss bereavement guidance resources'
     ],

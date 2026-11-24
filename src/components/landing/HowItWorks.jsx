@@ -17,12 +17,12 @@ export function HowItWorks({ onBuildPlan }) {
     {
       num: '03',
       title: 'Review and Subscribe',
-      description: 'See your transparent itemized monthly rate. No surprise travel fees, no long contracts. Billing only begins after your first completed visit.'
+      description: 'See your transparent itemized monthly rate with no hidden charges. Review your selections and finalize your care schedule prior to onboarding.'
     },
     {
       num: '04',
       title: 'Enjoy Coordinated Care',
-      description: 'Meet your dedicated PawKeep team. Receive gate confirmation photos, visit logs, and care notes automatically in your member dashboard.'
+      description: 'Connect with your coordinated PawKeep team. Receive visit summaries, care logs, and service updates right inside your member dashboard.'
     }
   ];
 

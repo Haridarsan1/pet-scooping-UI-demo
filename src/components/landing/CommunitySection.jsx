@@ -153,7 +153,7 @@ export function CommunitySection() {
                 color: '#D8D5DA'
               }}
             >
-              Clean common lawns, regularly stocked pet waste stations, resident subscription discounts on every service, and one transparent monthly property invoice with GPS visit logs.
+              Clean common lawns, regularly stocked pet waste stations, resident subscription discounts on every service, and one transparent monthly property invoice with itemized property visit records.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '14px' }}>

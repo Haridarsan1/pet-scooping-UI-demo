@@ -16,7 +16,7 @@ export function DashboardPreview() {
         <SectionHeading
           kicker="Customer Experience"
           title="Your Complete Care Hub. Everything in One Place."
-          subtitle="Preview the PawKeep member experience. Track upcoming visits, review gate confirmation photos, chat with your Care Coordinator, and manage your billing with total clarity."
+          subtitle="Preview the PawKeep member experience. Track upcoming visits, review completed visit notes, message your Care Coordinator, and review your subscription details with total clarity."
         />
 
         {/* Dashboard Showcase Mockup Window */}
@@ -94,7 +94,7 @@ export function DashboardPreview() {
                   Biscuit (Golden Retriever)
                 </h4>
                 <p style={{ margin: '2px 0 0', fontSize: '13px', color: 'var(--pk-text-secondary)' }}>
-                  Active Care Plan • Care Coordinator: <strong>Jamie R.</strong>
+                  Active Care Plan • Care Coordinator: <strong>Assigned Coordinator</strong>
                 </p>
               </div>
             </div>
@@ -162,7 +162,7 @@ export function DashboardPreview() {
                     Weekly Yard Scooping
                   </h5>
                   <p style={{ margin: '0 0 12px', fontSize: '13px', color: 'var(--pk-text-secondary)' }}>
-                    Caretaker: <strong>Marcus T.</strong> • Gate Code: #404-Side
+                    Caretaker: <strong>Assigned Field Caretaker</strong> • Gate Code: #404-Side
                   </p>
                   <div style={{ fontSize: '12px', color: '#6A6870', borderTop: '1px solid var(--pk-border-subtle)', paddingTop: '10px' }}>
                     Auto-alert enabled: You will receive a time-stamped photo once the gate is securely locked.
@@ -178,7 +178,7 @@ export function DashboardPreview() {
                     In-Home Grooming & Bath
                   </h5>
                   <p style={{ margin: '0 0 12px', fontSize: '13px', color: 'var(--pk-text-secondary)' }}>
-                    Specialist: <strong>Elena S.</strong> • Deshedding + gentle nail trim
+                    Specialist: <strong>Assigned Grooming Specialist</strong> • Deshedding + gentle nail trim
                   </p>
                   <div style={{ fontSize: '12px', color: '#6A6870', borderTop: '1px solid var(--pk-border-subtle)', paddingTop: '10px' }}>
                     Adult household member must be present. Warm bath setup in guest bathroom.
@@ -194,7 +194,7 @@ export function DashboardPreview() {
                     Quarterly Vet Wellness Visit
                   </h5>
                   <p style={{ margin: '0 0 12px', fontSize: '13px', color: 'var(--pk-text-secondary)' }}>
-                    Partner: <strong>Dr. Sarah Lin, DVM</strong> • Living room checkup
+                    Partner: <strong>Licensed Partner Clinic</strong> • Living room checkup
                   </p>
                   <div style={{ fontSize: '12px', color: '#6A6870', borderTop: '1px solid var(--pk-border-subtle)', paddingTop: '10px' }}>
                     Includes core booster updates & digital preventative health log.
@@ -211,7 +211,7 @@ export function DashboardPreview() {
                       Latest Completed Visit Report: Tuesday, 10:42 AM
                     </h5>
                     <p style={{ margin: '4px 0 0', fontSize: '13px', color: 'var(--pk-text-secondary)' }}>
-                      Completed by Marcus T. • Full perimeter walk & sanitization
+                      Completed by Assigned Field Caretaker • Full perimeter walk & sanitization
                     </p>
                   </div>
                   <span className="pk-badge pk-badge-sage">✓ Passed Verification</span>
@@ -242,7 +242,7 @@ export function DashboardPreview() {
                       Current Subscription: Coordinated Monthly Plan
                     </h5>
                     <p style={{ margin: '4px 0 0', fontSize: '13px', color: 'var(--pk-text-secondary)' }}>
-                      Auto-renews on the 1st of each month • Month-to-month, pause anytime
+                      Demonstration billing cycle • Illustrative recurring plan breakdown
                     </p>
                   </div>
                   <div style={{ textAlign: 'right' }}>
