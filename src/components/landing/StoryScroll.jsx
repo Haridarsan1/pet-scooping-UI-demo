@@ -2,6 +2,25 @@ import React, { useEffect, useRef, useState } from 'react';
 import { sx } from '../../sx.js';
 import '../../pawkeep.css';
 
+const storyPhotos = {
+  dog: [
+    { src: '/images/story/dog-yard-before.jpg', alt: 'Residential backyard before PawKeep pet care' },
+    { src: '/images/story/dog-yard-after.jpg', alt: 'Clean, spotless manicured lawn after PawKeep scooping' },
+    { src: '/images/story/dog-grooming.jpg', alt: 'Gentle in-home dog grooming and coat care' },
+    { src: '/images/story/dog-vet.jpg', alt: 'Calm in-home veterinary wellness examination' },
+    { src: '/images/story/dog-training.jpg', alt: 'Positive reinforcement dog manners and leash training' },
+    { src: '/images/story/dog-plan.jpg', alt: 'Healthy, happy family dog resting contentedly at home' }
+  ],
+  cat: [
+    { src: '/images/story/cat-yard-before.jpg', alt: 'Home living area before PawKeep cat care' },
+    { src: '/images/story/cat-yard-after.jpg', alt: 'Fresh, sanitized home and spotless litter area' },
+    { src: '/images/story/cat-grooming.jpg', alt: 'Stress-free in-home cat coat brushing and de-shedding' },
+    { src: '/images/story/cat-vet.jpg', alt: 'Gentle couch-side cat health and wellness checkup' },
+    { src: '/images/story/cat-training.jpg', alt: 'Engaging cat enrichment and positive routine session' },
+    { src: '/images/story/cat-plan.jpg', alt: 'Content, healthy indoor cat relaxing peacefully at home' }
+  ]
+};
+
 export function StoryScroll({ petName: globalPetName, petType: globalPetType }) {
   const storyRef = useRef(null);
   const [ch, setCh] = useState(0);
@@ -99,16 +118,18 @@ export function StoryScroll({ petName: globalPetName, petType: globalPetType }) 
   const chData = [
     {
       kicker: 'A normal week',
-      title: `This is ${poss} yard. Before PawKeep.`,
+      title: isCat ? `This is ${poss} home. Before PawKeep.` : `This is ${poss} yard. Before PawKeep.`,
       body: isCat
-        ? 'A litter box you keep meaning to clean, a coat that needs brushing, and never enough time.'
-        : 'Piles you keep meaning to get to, a muddy lawn, and never enough weekend time.',
+        ? 'A litter box you keep meaning to clean, a coat that needs brushing, and never enough weekend time.'
+        : 'Piles you keep meaning to get to, an unkempt lawn, and never enough weekend time.',
       askName: true
     },
     {
       kicker: isCat ? 'Litter box care' : 'Poop scooping',
-      title: 'Every week, our care team scoops it.',
-      body: 'Our field care team clears the mess, bags it and hauls it away, on a recurring cadence you choose.'
+      title: isCat ? 'Every week, clean and sanitized.' : 'Every week, our care team scoops it.',
+      body: isCat
+        ? 'Our care team scoops, sanitizes, and refreshes the litter box on a regular cadence you choose.'
+        : 'Our field care team clears the mess, bags it and hauls it away, on a recurring cadence you choose.'
     },
     {
       kicker: 'Grooming',
@@ -121,35 +142,55 @@ export function StoryScroll({ petName: globalPetName, petType: globalPetType }) 
       body: 'A state-licensed partner vet comes directly to you. No scary carrier, no car ride, no waiting room.'
     },
     {
-      kicker: 'Training',
-      title: 'Better manners, built in.',
-      body: 'Two one-hour positive reinforcement sessions a month for calm walks and polite hellos.'
+      kicker: isCat ? 'Enrichment' : 'Training',
+      title: isCat ? 'Enrichment and calm routines.' : 'Better manners, built in.',
+      body: isCat
+        ? 'Positive enrichment routines, scratching post guidance, and stress-free acclimation.'
+        : 'Two one-hour positive reinforcement sessions a month for calm walks and polite hellos.'
     },
     {
       kicker: 'One plan',
       title: 'All of it. One caring team. One bill.',
-      body: `Pick what ${name} needs and see your price in seconds. Plans start at $79 a month.`,
+      body: `Pick what ${name} needs and see your illustrative price in seconds. Plans start at $79 a month.`,
       isPlan: true
     }
   ];
 
-  const railLabels = ['Before', isCat ? 'Litter box' : 'Scooping', 'Grooming', 'Vet visit', 'Training', 'Your plan'];
+  const railLabels = ['Before', isCat ? 'Litter box' : 'Scooping', 'Grooming', 'Vet visit', isCat ? 'Enrichment' : 'Training', 'Your plan'];
   const bgs = ['#F6F4F5', '#EEF5EF', '#EEF2FB', '#FBEDEF', '#FBF4D6', '#FBE9EC'];
   const cams = [
-    ['scale(1.06)', '50% 60%'],
     ['scale(1)', '50% 50%'],
-    ['scale(1.5)', '52% 72%'],
-    ['scale(1.38)', '50% 66%'],
-    ['scale(1.3)', '30% 82%'],
-    ['scale(.96)', '50% 50%']
+    ['scale(1.02)', '50% 50%'],
+    ['scale(1.04)', '50% 50%'],
+    ['scale(1.04)', '50% 50%'],
+    ['scale(1.04)', '50% 50%'],
+    ['scale(1)', '50% 50%']
   ];
 
   const cards = {
-    2: { k: 'Grooming checklist', t: 'Full groom at home', items: ['Warm bath', 'Brush-out', 'Nail trim', 'Ear clean'] },
-    3: { k: 'Vet visit report', t: 'Healthy and happy', items: ['Weight checked', 'Heart and lungs', 'Vaccines up to date', 'Next check in 3 months'] },
-    4: { k: 'Training log', t: 'Session 2 of 2', items: ['Sit and stay', 'Loose-leash walk', 'Wait at the door', 'Calm hello for guests'] }
+    2: {
+      k: 'Grooming checklist',
+      t: isCat ? 'Gentle cat grooming at home' : 'Full groom at home',
+      items: isCat
+        ? ['Coat de-shed & brush', 'Nail trim', 'Ear & eye cleanse', 'No salon cage stress']
+        : ['Warm bath', 'Brush-out', 'Nail trim', 'Ear clean']
+    },
+    3: {
+      k: 'Vet visit report',
+      t: 'Healthy and happy',
+      items: ['Weight checked', 'Heart and lungs', 'Vaccines up to date', 'Next check in 3 months']
+    },
+    4: {
+      k: isCat ? 'Enrichment log' : 'Training log',
+      t: 'Session 2 of 2',
+      items: isCat
+        ? ['Scratching post redirection', 'Interactive puzzle play', 'Carrier acclimation', 'Calm environment']
+        : ['Sit and stay', 'Loose-leash walk', 'Wait at the door', 'Calm hello for guests']
+    }
   };
   const stCard = cards[ch];
+
+  const currentPhotos = storyPhotos[localPetType] || storyPhotos.dog;
 
   const show = (on) => (on ? 'opacity: 1; transform: none' : 'opacity: 0; transform: translateY(14px) scale(.9); pointer-events: none');
 
@@ -160,23 +201,13 @@ export function StoryScroll({ petName: globalPetName, petType: globalPetType }) 
       aria-label="A week with PawKeep, told as a story"
       style={{
         position: 'relative',
-        height: '3200px', // Streamlined height for better scrolling usability
+        height: '3200px',
         ['--p']: 0,
         ['--wipe']: 0,
         ['--wipeOp']: 0
       }}
     >
-      <div
-        style={{
-          position: 'sticky',
-          top: '78px',
-          height: 'min(92vh, 800px)',
-          minHeight: '620px',
-          overflow: 'hidden',
-          transition: 'background-color .8s ease',
-          backgroundColor: bgs[ch]
-        }}
-      >
+      <div className="pk-story-sticky" style={{ backgroundColor: bgs[ch] }}>
         {/* Progress bar */}
         <div
           aria-hidden="true"
@@ -189,21 +220,11 @@ export function StoryScroll({ petName: globalPetName, petType: globalPetType }) 
             transformOrigin: 'left center',
             transform: 'scaleX(var(--p))',
             background: 'linear-gradient(90deg, #F4C7CF, #C2415B)',
-            zIndex: 2
+            zIndex: 10
           }}
         />
 
-        <div
-          style={{
-            height: '100%',
-            maxWidth: '1280px',
-            margin: '0 auto',
-            padding: '24px 24px 20px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '16px'
-          }}
-        >
+        <div className="pk-story-body">
           {/* Chapter rail */}
           <div
             className="pk-rail"
@@ -213,7 +234,8 @@ export function StoryScroll({ petName: globalPetName, petType: globalPetType }) 
               display: 'flex',
               gap: '8px',
               overflowX: 'auto',
-              paddingBottom: '4px'
+              paddingBottom: '4px',
+              flexShrink: 0
             }}
           >
             {railLabels.map((label, idx) => {
@@ -263,43 +285,22 @@ export function StoryScroll({ petName: globalPetName, petType: globalPetType }) 
           </div>
 
           {/* Chapter content & interactive scene */}
-          <div
-            style={{
-              flex: '1 1 auto',
-              minHeight: 0,
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              gap: '28px'
-            }}
-          >
+          <div className="pk-story-cols">
             {/* Story Text Column */}
-            <div
-              className="pk-story-text"
-              style={{
-                flex: '1 1 340px',
-                minWidth: 0,
-                position: 'relative',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center'
-              }}
-            >
-              <div style={{ position: 'relative', minHeight: '300px' }}>
+            <div className="pk-story-text-col">
+              <div className="pk-story-grid">
                 {chData.map((c, i) => {
                   const on = i === ch;
                   return (
                     <div
                       key={i}
+                      className="pk-story-grid-item"
                       aria-hidden={!on}
                       style={{
-                        position: 'absolute',
-                        inset: 0,
                         visibility: on ? 'visible' : 'hidden',
                         opacity: on ? 1 : 0,
                         pointerEvents: on ? 'auto' : 'none',
-                        transition: 'opacity 0.4s ease, transform 0.4s ease',
-                        transform: on ? 'none' : `translateY(${i < ch ? -15 : 15}px)`
+                        transform: on ? 'none' : `translateY(${i < ch ? -12 : 12}px)`
                       }}
                     >
                       <p
@@ -325,9 +326,10 @@ export function StoryScroll({ petName: globalPetName, petType: globalPetType }) 
                           margin: '12px 0 0',
                           fontFamily: 'var(--font-brand)',
                           fontWeight: 700,
-                          fontSize: 'clamp(26px, 3vw, 42px)',
-                          lineHeight: 1.08,
-                          letterSpacing: '-1.4px'
+                          fontSize: 'clamp(24px, 2.6vw, 38px)',
+                          lineHeight: 1.12,
+                          letterSpacing: '-1px',
+                          color: '#232326'
                         }}
                       >
                         {c.title}
@@ -335,89 +337,135 @@ export function StoryScroll({ petName: globalPetName, petType: globalPetType }) 
 
                       <p
                         style={{
-                          margin: '12px 0 0',
-                          fontSize: '16px',
+                          margin: '10px 0 0',
+                          fontSize: '15px',
                           lineHeight: 1.55,
                           color: '#4B4A50',
-                          maxWidth: '28em'
+                          maxWidth: '30em'
                         }}
                       >
                         {c.body}
                       </p>
 
                       {c.askName && (
-                        <div style={{ marginTop: '18px', display: 'flex', flexWrap: 'wrap', gap: '8px', maxWidth: '400px' }}>
-                          <label htmlFor="story-name-input" style={{ flexBasis: '100%', fontSize: '13px', fontWeight: 800 }}>
+                        <div
+                          className="pk-story-personalize"
+                          style={{
+                            marginTop: '16px',
+                            padding: '14px 16px',
+                            borderRadius: '16px',
+                            background: '#FFFFFF',
+                            border: '1.5px solid #ECE7E9',
+                            boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
+                            maxWidth: '460px'
+                          }}
+                        >
+                          <label
+                            htmlFor="story-name-input"
+                            style={{
+                              display: 'block',
+                              fontSize: '13px',
+                              fontWeight: 800,
+                              color: '#232326',
+                              marginBottom: '8px'
+                            }}
+                          >
                             Personalize this story:
                           </label>
-                          <input
-                            id="story-name-input"
-                            maxLength={20}
-                            placeholder="Your pet’s name"
-                            value={localPetName}
-                            onChange={(e) => setLocalPetName(e.target.value.slice(0, 20))}
-                            style={{
-                              flex: '1 1 150px',
-                              minWidth: 0,
-                              minHeight: '46px',
-                              padding: '0 14px',
-                              borderRadius: '12px',
-                              border: '1.5px solid #ECE7E9',
-                              background: '#FFFFFF',
-                              fontSize: '15px',
-                              fontWeight: 700
-                            }}
-                          />
-                          <div
-                            role="group"
-                            aria-label="Pet type"
-                            style={{ display: 'flex', padding: '3px', borderRadius: '12px', background: '#FFFFFF', border: '1.5px solid #ECE7E9' }}
-                          >
-                            <button
-                              type="button"
-                              onClick={() => setLocalPetType('dog')}
+                          <div className="pk-story-personalize-row">
+                            <input
+                              id="story-name-input"
+                              maxLength={20}
+                              placeholder="Your pet’s name"
+                              value={localPetName}
+                              onChange={(e) => setLocalPetName(e.target.value.slice(0, 20))}
                               style={{
-                                padding: '0 12px',
-                                minHeight: '38px',
-                                borderRadius: '9px',
-                                background: localPetType === 'dog' ? '#232326' : 'transparent',
-                                color: localPetType === 'dog' ? '#FFFFFF' : '#232326',
-                                fontWeight: 800,
-                                fontSize: '13px',
-                                cursor: 'pointer'
+                                flex: '1 1 180px',
+                                minWidth: 0,
+                                height: '44px',
+                                padding: '0 14px',
+                                borderRadius: '10px',
+                                border: '1.5px solid #ECE7E9',
+                                background: '#FAF9F9',
+                                fontSize: '14px',
+                                fontWeight: 700,
+                                color: '#232326',
+                                outline: 'none'
+                              }}
+                            />
+                            <div
+                              className="pk-pet-toggle"
+                              role="group"
+                              aria-label="Pet type"
+                              style={{
+                                display: 'flex',
+                                padding: '3px',
+                                borderRadius: '10px',
+                                background: '#F0ECEE',
+                                border: '1px solid #ECE7E9',
+                                flexShrink: 0
                               }}
                             >
-                              Dog
-                            </button>
-                            <button
-                              type="button"
-                              onClick={() => setLocalPetType('cat')}
-                              style={{
-                                padding: '0 12px',
-                                minHeight: '38px',
-                                borderRadius: '9px',
-                                background: localPetType === 'cat' ? '#232326' : 'transparent',
-                                color: localPetType === 'cat' ? '#FFFFFF' : '#232326',
-                                fontWeight: 800,
-                                fontSize: '13px',
-                                cursor: 'pointer'
-                              }}
-                            >
-                              Cat
-                            </button>
+                              <button
+                                type="button"
+                                onClick={() => setLocalPetType('dog')}
+                                aria-pressed={localPetType === 'dog'}
+                                style={{
+                                  display: 'inline-flex',
+                                  alignItems: 'center',
+                                  justifyContent: 'center',
+                                  gap: '6px',
+                                  padding: '0 14px',
+                                  height: '36px',
+                                  borderRadius: '8px',
+                                  border: 'none',
+                                  background: localPetType === 'dog' ? '#232326' : 'transparent',
+                                  color: localPetType === 'dog' ? '#FFFFFF' : '#4B4A50',
+                                  fontWeight: 800,
+                                  fontSize: '13px',
+                                  cursor: 'pointer',
+                                  transition: 'all 0.2s ease'
+                                }}
+                              >
+                                <span aria-hidden="true">🐶</span> Dog
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() => setLocalPetType('cat')}
+                                aria-pressed={localPetType === 'cat'}
+                                style={{
+                                  display: 'inline-flex',
+                                  alignItems: 'center',
+                                  justifyContent: 'center',
+                                  gap: '6px',
+                                  padding: '0 14px',
+                                  height: '36px',
+                                  borderRadius: '8px',
+                                  border: 'none',
+                                  background: localPetType === 'cat' ? '#232326' : 'transparent',
+                                  color: localPetType === 'cat' ? '#FFFFFF' : '#4B4A50',
+                                  fontWeight: 800,
+                                  fontSize: '13px',
+                                  cursor: 'pointer',
+                                  transition: 'all 0.2s ease'
+                                }}
+                              >
+                                <span aria-hidden="true">🐱</span> Cat
+                              </button>
+                            </div>
                           </div>
                         </div>
                       )}
 
                       {c.isPlan && (
-                        <div style={{ marginTop: '20px', display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                        <div style={{ marginTop: '18px', display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
                           <a
                             href="#plan"
                             style={{
                               textDecoration: 'none',
                               display: 'inline-flex',
                               alignItems: 'center',
-                              minHeight: '50px',
+                              minHeight: '48px',
                               padding: '0 22px',
                               borderRadius: '14px',
                               background: '#C2415B',
@@ -434,7 +482,7 @@ export function StoryScroll({ petName: globalPetName, petType: globalPetType }) 
                               textDecoration: 'none',
                               display: 'inline-flex',
                               alignItems: 'center',
-                              minHeight: '50px',
+                              minHeight: '48px',
                               padding: '0 18px',
                               borderRadius: '14px',
                               background: '#FFFFFF',
@@ -454,36 +502,52 @@ export function StoryScroll({ petName: globalPetName, petType: globalPetType }) 
               </div>
 
               {ch < 5 && (
-                <div style={{ marginTop: '14px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '13px', color: '#6A6870' }}>
-                  <span style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 700 }}>
+                <div
+                  style={{
+                    marginTop: '20px',
+                    paddingTop: '14px',
+                    borderTop: '1px solid rgba(0,0,0,0.06)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    flexWrap: 'wrap',
+                    gap: '10px',
+                    fontSize: '13px',
+                    color: '#6A6870'
+                  }}
+                >
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontWeight: 700 }}>
                     <span style={{ animation: 'pkFloat 2s infinite ease-in-out', display: 'inline-block' }}>↓</span> Scroll to see each service in action
                   </span>
-                  <a href="#plan" style={{ color: '#C2415B', fontWeight: 800, textDecoration: 'underline' }}>
+                  <a
+                    href="#plan"
+                    style={{
+                      color: '#C2415B',
+                      fontWeight: 800,
+                      textDecoration: 'underline',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px'
+                    }}
+                  >
                     Skip to Pricing Calculator →
                   </a>
                 </div>
               )}
             </div>
 
-            {/* Interactive Scene Column */}
-            <div
-              className="pk-story-scene"
-              style={{
-                flex: '1.5 1 480px',
-                minWidth: 0,
-                perspective: '1600px'
-              }}
-            >
+            {/* Interactive Scene Column with Photorealistic Story */}
+            <div className="pk-story-scene-col">
               <div
                 className="pk-tiltable"
                 style={{
                   position: 'relative',
                   width: '100%',
                   aspectRatio: '1200 / 680',
-                  borderRadius: '26px',
+                  borderRadius: '24px',
                   overflow: 'hidden',
                   background: '#232326',
-                  boxShadow: '0 30px 60px -25px rgba(35,35,38,.5)'
+                  boxShadow: '0 25px 50px -20px rgba(35,35,38,.45)'
                 }}
               >
                 <div
@@ -492,121 +556,272 @@ export function StoryScroll({ petName: globalPetName, petType: globalPetType }) 
                     position: 'absolute',
                     inset: 0,
                     willChange: 'transform',
-                    transition: 'transform 1.4s cubic-bezier(.65,0,.15,1)',
+                    transition: 'transform 1.2s cubic-bezier(.65,0,.15,1)',
                     transformOrigin: cams[ch][1],
                     transform: cams[ch][0]
                   }}
                 >
-                  {/* Before Scene (Unclean yard) */}
-                  <div style={{ position: 'absolute', inset: 0 }}>
-                    <svg viewBox="0 0 1200 620" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block' }} aria-hidden="true">
-                      <defs>
-                        <linearGradient id="m-sky-s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#B9BFB3" /><stop offset="1" stopColor="#DEDACB" /></linearGradient>
-                        <linearGradient id="m-lawn-s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#A2A46A" /><stop offset="1" stopColor="#76783F" /></linearGradient>
-                      </defs>
-                      <rect width="1200" height="620" fill="url(#m-sky-s)" />
-                      <g fill="#A3A99E"><ellipse cx="260" cy="110" rx="130" ry="46" /><ellipse cx="880" cy="140" rx="150" ry="50" /></g>
-                      <path d="M0 330 Q300 270 600 310 T1200 300 V620 H0Z" fill="#8F9870" />
-                      <path d="M0 410 Q600 370 1200 410 V620 H0Z" fill="url(#m-lawn-s)" />
-                      {/* Piles */}
-                      <g transform="translate(200 520)"><ellipse cx="0" cy="0" rx="26" ry="10" fill="#5A3820" /><ellipse cx="0" cy="-10" rx="18" ry="8" fill="#6B4426" /></g>
-                      <g transform="translate(460 590)"><ellipse cx="0" cy="0" rx="26" ry="10" fill="#5A3820" /><ellipse cx="0" cy="-10" rx="18" ry="8" fill="#6B4426" /></g>
-                      <g transform="translate(760 520)"><ellipse cx="0" cy="0" rx="26" ry="10" fill="#5A3820" /><ellipse cx="0" cy="-10" rx="18" ry="8" fill="#6B4426" /></g>
-                      <g transform="translate(980 600)"><ellipse cx="0" cy="0" rx="26" ry="10" fill="#5A3820" /><ellipse cx="0" cy="-10" rx="18" ry="8" fill="#6B4426" /></g>
-                      {/* Pet */}
-                      <ellipse cx="600" cy="578" rx="110" ry="14" fill="#1B2430" opacity=".18" />
-                      <ellipse cx="600" cy="494" rx="74" ry="82" fill="#8F7C68" />
-                      <circle cx="600" cy="388" r="64" fill="#8F7C68" />
-                    </svg>
-                  </div>
-
-                  {/* Clean yard with wipe mask */}
-                  <div style={{ position: 'absolute', inset: 0, clipPath: 'inset(0 calc((1 - var(--wipe)) * 100%) 0 0)' }}>
-                    <svg viewBox="0 0 1200 620" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block' }} aria-hidden="true">
-                      <defs>
-                        <linearGradient id="c-sky-s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#7CC4FF" /><stop offset="1" stopColor="#D8F0FF" /></linearGradient>
-                        <radialGradient id="c-lawn-s" cx="45%" cy="10%" r="90%"><stop offset="0" stopColor="#9BE6AE" /><stop offset=".5" stopColor="#4CB873" /><stop offset="1" stopColor="#2B8A50" /></radialGradient>
-                      </defs>
-                      <rect width="1200" height="620" fill="url(#c-sky-s)" />
-                      <circle cx="1050" cy="110" r="58" fill="#FFD447" />
-                      <path d="M0 330 Q300 270 600 310 T1200 300 V620 H0Z" fill="#6CCB8B" />
-                      <path d="M0 410 Q600 370 1200 410 V620 H0Z" fill="url(#c-lawn-s)" />
-                      {/* Happy Pet */}
-                      <ellipse cx="600" cy="578" rx="110" ry="14" fill="#1B2430" opacity=".18" />
-                      <ellipse cx="600" cy="494" rx="74" ry="82" fill="#F2C27B" />
-                      <circle cx="600" cy="388" r="64" fill="#F2C27B" />
-                      <circle cx="580" cy="380" r="6" fill="#3B2414" />
-                      <circle cx="620" cy="380" r="6" fill="#3B2414" />
-                      <ellipse cx="600" cy="402" rx="11" ry="8" fill="#3B2414" />
-                    </svg>
-                  </div>
-
-                  {/* Wipe dividing line */}
+                  {/* Base Scene 0 (Before State Photo) */}
                   <div
-                    className="pk-wipe"
-                    aria-hidden="true"
                     style={{
                       position: 'absolute',
-                      top: 0,
-                      bottom: 0,
-                      left: 0,
-                      width: '4px',
-                      marginLeft: '-2px',
-                      background: '#FFFFFF',
-                      boxShadow: '0 0 24px rgba(255,255,255,.9)',
-                      transform: 'translateX(calc(var(--wipe) * var(--sceneW, 900px)))',
-                      opacity: 'var(--wipeOp)'
+                      inset: 0,
+                      opacity: ch <= 1 ? 1 : 0,
+                      transition: 'opacity 0.6s ease',
+                      zIndex: 1
                     }}
-                  />
-
-                  {/* Service Overlays */}
-                  {/* Grooming Bubbles */}
-                  <div style={sx(`position: absolute; left: 56%; top: 52%; width: 9%; transition: opacity .7s ease; ${show(ch === 2)}`)}>
-                    <div className="pk-bubbles">
-                      <svg width="60" height="60" viewBox="0 0 100 100">
-                        <circle cx="40" cy="60" r="32" fill="#F4C7CF" opacity="0.9" />
-                        <circle cx="74" cy="30" r="20" fill="#C2415B" opacity="0.8" />
-                      </svg>
+                  >
+                    <img
+                      src={currentPhotos[0].src}
+                      alt={currentPhotos[0].alt}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'center',
+                        display: 'block'
+                      }}
+                    />
+                    {/* Before Label Indicator */}
+                    <div
+                      style={{
+                        position: 'absolute',
+                        left: '16px',
+                        bottom: '16px',
+                        padding: '6px 12px',
+                        borderRadius: '8px',
+                        background: 'rgba(35,35,38,0.75)',
+                        backdropFilter: 'blur(6px)',
+                        color: '#FFFFFF',
+                        fontSize: '12px',
+                        fontWeight: 700,
+                        letterSpacing: '0.5px'
+                      }}
+                    >
+                      BEFORE PAWKEEP
                     </div>
                   </div>
 
-                  {/* Vet Stethoscope / Heart */}
-                  <div style={sx(`position: absolute; left: 56%; top: 44%; width: 7%; transition: opacity .7s ease; ${show(ch === 3)}`)}>
-                    <div className="pk-beat">
-                      <svg width="50" height="50" viewBox="0 0 24 24" fill="#C2415B">
-                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                      </svg>
+                  {/* Clean Scene 1 (After Scooping / Box Care with Wipe Mask) */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      clipPath: ch === 0 ? 'inset(0 100% 0 0)' : (ch === 1 ? 'inset(0 calc((1 - var(--wipe)) * 100%) 0 0)' : 'inset(0 0 0 0)'),
+                      opacity: ch <= 1 ? 1 : 0,
+                      transition: ch > 1 ? 'opacity 0.6s ease' : 'none',
+                      zIndex: 2
+                    }}
+                  >
+                    <img
+                      src={currentPhotos[1].src}
+                      alt={currentPhotos[1].alt}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'center',
+                        display: 'block'
+                      }}
+                    />
+                    {/* Clean Label Indicator */}
+                    <div
+                      style={{
+                        position: 'absolute',
+                        right: '16px',
+                        bottom: '16px',
+                        padding: '6px 12px',
+                        borderRadius: '8px',
+                        background: 'rgba(46,125,50,0.85)',
+                        backdropFilter: 'blur(6px)',
+                        color: '#FFFFFF',
+                        fontSize: '12px',
+                        fontWeight: 700,
+                        letterSpacing: '0.5px'
+                      }}
+                    >
+                      CLEAN & MAINTAINED
                     </div>
+                  </div>
+
+                  {/* Wipe dividing line in Scene 1 */}
+                  {ch === 1 && (
+                    <div
+                      className="pk-wipe"
+                      aria-hidden="true"
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        bottom: 0,
+                        left: 0,
+                        width: '3px',
+                        marginLeft: '-1.5px',
+                        background: '#FFFFFF',
+                        boxShadow: '0 0 16px rgba(255,255,255,1), 0 0 4px rgba(0,0,0,0.4)',
+                        transform: 'translateX(calc(var(--wipe) * var(--sceneW, 800px)))',
+                        opacity: 'var(--wipeOp)',
+                        zIndex: 6
+                      }}
+                    >
+                      <div
+                        style={{
+                          position: 'absolute',
+                          top: '50%',
+                          left: '50%',
+                          transform: 'translate(-50%, -50%)',
+                          width: '28px',
+                          height: '28px',
+                          borderRadius: '50%',
+                          background: '#FFFFFF',
+                          boxShadow: '0 2px 10px rgba(0,0,0,0.3)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '12px',
+                          color: '#232326',
+                          fontWeight: 900
+                        }}
+                      >
+                        ↔
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Scene 2 (Grooming Photo) */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      opacity: ch === 2 ? 1 : 0,
+                      pointerEvents: 'none',
+                      transition: 'opacity 0.7s ease',
+                      zIndex: 3
+                    }}
+                  >
+                    <img
+                      src={currentPhotos[2].src}
+                      alt={currentPhotos[2].alt}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'center',
+                        display: 'block'
+                      }}
+                    />
+                  </div>
+
+                  {/* Scene 3 (Vet Photo) */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      opacity: ch === 3 ? 1 : 0,
+                      pointerEvents: 'none',
+                      transition: 'opacity 0.7s ease',
+                      zIndex: 3
+                    }}
+                  >
+                    <img
+                      src={currentPhotos[3].src}
+                      alt={currentPhotos[3].alt}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'center',
+                        display: 'block'
+                      }}
+                    />
+                  </div>
+
+                  {/* Scene 4 (Training / Enrichment Photo) */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      opacity: ch === 4 ? 1 : 0,
+                      pointerEvents: 'none',
+                      transition: 'opacity 0.7s ease',
+                      zIndex: 3
+                    }}
+                  >
+                    <img
+                      src={currentPhotos[4].src}
+                      alt={currentPhotos[4].alt}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'center',
+                        display: 'block'
+                      }}
+                    />
+                  </div>
+
+                  {/* Scene 5 (One Plan / Content Pet Photo) */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      opacity: ch === 5 ? 1 : 0,
+                      pointerEvents: 'none',
+                      transition: 'opacity 0.7s ease',
+                      zIndex: 3
+                    }}
+                  >
+                    <img
+                      src={currentPhotos[5].src}
+                      alt={currentPhotos[5].alt}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'center',
+                        display: 'block'
+                      }}
+                    />
                   </div>
                 </div>
 
-                {/* Status Badge in Scene */}
+                {/* Status Badge in Scene 1 */}
                 <div
-                  style={sx(`position: absolute; left: 3%; top: 5%; display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 14px; background: #FFFFFF; box-shadow: 0 10px 24px rgba(0,0,0,.25); transition: opacity .6s ease; ${show(ch === 1)}`)}
+                  style={sx(`position: absolute; left: 16px; top: 16px; z-index: 8; display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 14px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); box-shadow: 0 8px 24px rgba(0,0,0,.25); transition: opacity .5s ease; ${show(ch === 1)}`)}
                 >
                   <span style={{ width: '34px', height: '34px', borderRadius: '10px', background: '#C2415B', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '12px' }}>
                     PK
                   </span>
-                  <span style={{ fontSize: '13px', lineHeight: 1.35 }}>
-                    <strong>Care team is scooping</strong><br />
-                    {piles === 0 ? 'Yard is spotless! Waste bagged.' : `${piles} piles left to haul`}
+                  <span style={{ fontSize: '13px', lineHeight: 1.35, color: '#232326' }}>
+                    <strong>{isCat ? 'Litter care in progress' : 'Care team is scooping'}</strong><br />
+                    {piles === 0 ? (isCat ? 'Box refreshed & sanitized' : 'Yard is spotless! Waste hauled.') : (isCat ? 'Sanitizing & refreshing box' : `${piles} areas cleared & hauled`)}
                   </span>
                 </div>
 
-                {/* Service Card In Scene */}
+                {/* Service Card In Scenes 2, 3, 4 */}
                 {stCard && (
                   <div
-                    style={sx(`position: absolute; right: 3%; top: 5%; width: min(240px, 45%); padding: 14px; border-radius: 16px; background: #FFFFFF; box-shadow: 0 14px 30px rgba(0,0,0,.3); transition: opacity .6s ease; ${show(!!stCard)}`)}
+                    style={sx(`position: absolute; right: 16px; top: 16px; z-index: 8; width: min(240px, 48%); padding: 14px; border-radius: 16px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); box-shadow: 0 10px 28px rgba(0,0,0,.25); transition: opacity .5s ease; ${show(!!stCard)}`)}
                   >
-                    <p style={{ margin: 0, fontSize: '11px', fontWeight: 800, color: '#C2415B' }}>{stCard.k}</p>
-                    <p style={{ margin: '4px 0 8px', fontFamily: 'var(--font-brand)', fontWeight: 700, fontSize: '15px' }}>{stCard.t}</p>
+                    <p style={{ margin: 0, fontSize: '11px', fontWeight: 800, color: '#C2415B', textTransform: 'uppercase', letterSpacing: '0.5px' }}>{stCard.k}</p>
+                    <p style={{ margin: '4px 0 8px', fontFamily: 'var(--font-brand)', fontWeight: 700, fontSize: '15px', color: '#232326' }}>{stCard.t}</p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
                       {stCard.items.map((it, idx) => (
                         <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', fontWeight: 700, color: '#4B4A50' }}>
-                          <span style={{ color: '#C2415B' }}>✓</span> {it}
+                          <span style={{ color: '#2E7D32', fontWeight: 900 }}>✓</span> {it}
                         </div>
                       ))}
                     </div>
+                  </div>
+                )}
+
+                {/* Scene 5 Plan Badge */}
+                {ch === 5 && (
+                  <div
+                    style={sx(`position: absolute; left: 16px; bottom: 16px; z-index: 8; padding: 10px 16px; border-radius: 12px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); box-shadow: 0 8px 24px rgba(0,0,0,.25); transition: opacity .5s ease; ${show(ch === 5)}`)}
+                  >
+                    <span style={{ fontSize: '13px', fontWeight: 800, color: '#232326' }}>
+                      Everything {poss} needs in one flexible plan
+                    </span>
                   </div>
                 )}
               </div>
