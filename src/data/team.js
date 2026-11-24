@@ -1,45 +1,42 @@
-// Care Team structure clearly distinguishing coordination, providers, and licensed vets
-// All bio details are clearly structured role placeholders for transparency.
+// Care Team structure clearly distinguishing coordination, field providers, and licensed veterinarians.
+// All role profiles are representative descriptions; no invented employee names or unconfirmed certifications.
 
 export const CARE_TEAM_ROLES = [
   {
     id: 'coordinators',
     category: 'PawKeep Coordination Team',
-    badge: 'Your Dedicated Concierge',
-    roleTitle: 'Care Coordinator',
-    placeholderName: 'Jamie R. & Regional Team',
-    experiencePlaceholder: '5+ years in veterinary logistics & customer care',
-    specialization: 'Central scheduling, custom plan adjustments, and 7-day care support',
+    badge: 'Care Coordination',
+    roleTitle: 'PawKeep Care Coordinator',
+    roleScope: 'Central Logistics & Support',
+    coreResponsibility: 'Visit coordination, caretaker dispatch, schedule adjustments, and pet profile records.',
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80',
-    imageAlt: 'Friendly PawKeep Care Coordinator working with pet care schedules',
-    description: 'Your single point of contact who keeps all your pet services synchronized, manages gate access notes, and ensures your visits happen smoothly on time.',
+    imageAlt: 'PawKeep Care Coordinator reviewing scheduling logistics',
+    description: 'Your primary liaison who keeps routine appointments synchronized, updates gate access notes, and coordinates service schedules.',
     isLicensedVet: false
   },
   {
     id: 'specialists',
     category: 'Field Care Providers',
-    badge: 'Certified & Background Checked',
-    roleTitle: 'Certified Care Provider',
-    placeholderName: 'Marcus T. & Certified Caretakers',
-    experiencePlaceholder: 'Fear-Free certified handling, CPR & pet first-aid trained',
-    specialization: 'Lawn waste removal, in-home grooming, and cat litter care',
+    badge: 'Dedicated Field Team',
+    roleTitle: 'Field Care Provider',
+    roleScope: 'Direct Routine Service',
+    coreResponsibility: 'Scheduled yard scooping, indoor cat litter care, and in-home bath & brush appointments.',
     image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
-    imageAlt: 'Dedicated pet caretaker holding a dog leash outdoors',
-    description: 'The consistent, caring face your pet learns to love. Every caretaker is fully vetted, background-checked, insured, and trained in low-stress handling.',
+    imageAlt: 'Field pet caretaker with leash outdoors',
+    description: 'Dedicated caretakers assigned to your home for recurring exterior yard scooping, litter maintenance, and gentle in-home grooming.',
     isLicensedVet: false
   },
   {
     id: 'veterinarians',
     category: 'Licensed Veterinary Partners',
-    badge: 'Licensed DVM Professionals',
+    badge: 'Licensed Medical Partners',
     roleTitle: 'Partner Veterinarian (DVM)',
-    placeholderName: 'Dr. Sarah Lin, DVM & Medical Partners',
-    experiencePlaceholder: 'State Board Licensed DVMs with 8+ years clinical experience',
-    specialization: 'Preventative examinations, core vaccines, and gentle home passing',
+    roleScope: 'Independent Clinical Practice',
+    coreResponsibility: 'Routine physical examinations, preventative wellness checkups, core vaccinations, and in-home hospice/euthanasia.',
     image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80',
-    imageAlt: 'Licensed veterinarian in medical scrubs smiling warmly',
-    description: 'All clinical medical diagnostics and treatments are conducted by independently licensed veterinary doctors in your state, bringing hospital-standard care directly to your living room.',
+    imageAlt: 'Licensed veterinarian in clinic apparel',
+    description: 'All clinical medical examinations, prescription therapies, and medical procedures are provided exclusively by independently licensed Doctors of Veterinary Medicine (DVM).',
     isLicensedVet: true,
-    regulatoryNote: 'Clinical veterinary services provided exclusively through state-licensed DVM partners.'
+    regulatoryNote: 'Clinical veterinary care is conducted exclusively by state-licensed DVM partners and independent veterinary facilities.'
   }
 ];

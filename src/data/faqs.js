@@ -1,4 +1,4 @@
-// Comprehensive FAQs addressing all user requirements
+// Comprehensive FAQs addressing all user requirements with verified, prototype-accurate statements
 
 export const FAQS = [
   {
@@ -9,56 +9,56 @@ export const FAQS = [
   {
     id: 'select-individual',
     question: 'Can I select individual services or must I bundle everything?',
-    answer: 'You have complete freedom to choose only the services your pet needs. If you only want weekly yard scooping, you can subscribe to just that. If you want grooming and veterinary visits, you can combine them. You can adjust, add, or pause individual services anytime from your member portal.'
+    answer: 'You have complete freedom to choose only the services your pet needs. If you only want weekly yard scooping, you can subscribe to just that. If you want grooming and veterinary visits, you can combine them. You can adjust, add, or pause individual services from your member dashboard.'
   },
   {
     id: 'multiple-pets',
     question: 'Can I add multiple pets to my subscription?',
-    answer: 'Yes! PawKeep is designed for multi-pet households. You can add multiple dogs, cats, or both. Our pricing calculator itemizes small incremental charges for extra pets (such as yard scooping or extra litter boxes) while grooming and veterinary visits are scheduled per pet.'
+    answer: 'Yes. PawKeep supports multi-pet households. You can add multiple dogs, cats, or both. Our pricing builder itemizes incremental charges for extra pets (such as yard scooping or additional litter boxes) while grooming appointments are calculated per eligible pet per session.'
   },
   {
     id: 'dogs-and-cats',
     question: 'Are both dogs and cats supported?',
-    answer: 'Yes! We provide dedicated services for both dogs and cats. For dogs, we offer yard waste removal, grooming, home vet care, and behavioral training. For cats, we offer dedicated indoor litter box care, gentle grooming, and home veterinary care. Cat care is treated as a distinct, specialized service, not an afterthought.'
+    answer: 'Yes. We provide dedicated services for both dogs and cats. For dogs, we offer yard waste removal, grooming, home vet care, and behavioral training. For cats, we offer dedicated indoor litter box care, gentle grooming, and home veterinary care. Cat care is treated as a distinct, specialized service with separate supplies and protocols.'
   },
   {
     id: 'zip-availability',
     question: 'Is PawKeep available in my ZIP code?',
-    answer: 'PawKeep is currently rolling out across major metropolitan areas in the United States, including Austin, Denver, Seattle, San Francisco, Chicago, Atlanta, and Dallas. Use our ZIP code checker above to see if your neighborhood is currently active. If we are not in your area yet, enter your email on the waitlist to be notified first when we launch.'
+    answer: 'PawKeep is currently in demonstration mode across select metropolitan areas in the United States, including sample service zones in Austin, Denver, Seattle, San Francisco, Chicago, Atlanta, and Dallas. Use our ZIP code checker to test your area. For unserviced areas, a waitlist option is provided to track expansion interest.'
   },
   {
     id: 'how-appointments-work',
     question: 'How do appointments and visits work? Do I need to be home?',
-    answer: 'For exterior yard waste removal, you do not need to be home as long as our caretaker has gate access and pets are safely indoors. We send an arrival notification, a completed photo of your locked gate, and a visit report. For in-home services like grooming, veterinary care, and training sessions, an adult household member must be present.'
+    answer: 'For exterior yard waste removal, you do not need to be home provided our caretaker has gate access and pets are indoors. A time-stamped photo confirmation of the secured gate is recorded. For in-home services like grooming, veterinary care, and training sessions, an adult household member must be present.'
   },
   {
     id: 'pause-or-change',
     question: 'Can I pause or change my plan when going on vacation?',
-    answer: 'Yes. You can pause your service, change visit frequencies, or skip upcoming visits with a single tap in your dashboard or by messaging your Care Coordinator. There are no fees or penalties for pausing.'
+    answer: 'Yes. Service adjustments, frequency modifications, and temporary pause requests can be submitted through your member dashboard or via your assigned Care Coordinator, subject to the terms of your final membership agreement.'
   },
   {
     id: 'recurring-billing',
     question: 'How does recurring billing work?',
-    answer: 'Your subscription is billed monthly to your credit or debit card on file. Billing begins only after your initial service visit is completed. You receive a clear, itemized digital invoice each month with zero hidden fees or surprise surcharges.'
+    answer: 'Subscriptions are billed on a recurring monthly cycle as itemized in your plan summary. Digital statements reflecting your chosen services and frequency are provided for each billing period.'
   },
   {
     id: 'cancellation-policy',
     question: 'Can I cancel at any time?',
-    answer: 'Yes. PawKeep plans are month-to-month with no long-term contracts or lock-in commitments. You can cancel your subscription at any time through your member dashboard prior to your next monthly billing cycle.'
+    answer: 'Subscriptions are structured on a month-to-month recurring schedule. Applicable cancellation guidelines and required notice windows prior to recurring renewal will be set out in your membership agreement.'
   },
   {
     id: 'vet-credentials',
     question: 'Who provides the veterinary services?',
-    answer: 'All clinical medical exams, vaccinations, and end-of-life care are performed by independent, fully licensed and accredited veterinarians who partner with PawKeep within your respective state. PawKeep coordinates logistics, scheduling, and health records, while medical decisions remain strictly between you and your licensed veterinarian.'
+    answer: 'All clinical medical exams, diagnostic assessments, core vaccinations, and end-of-life procedures are performed exclusively by independent, state-licensed Doctors of Veterinary Medicine (DVM) who partner with PawKeep within your state. PawKeep provides scheduling and logistics coordination.'
   },
   {
     id: 'provider-unavailable',
     question: 'What happens when my regular caretaker is sick or unavailable?',
-    answer: 'Consistency is our priority—we pair you with a dedicated primary caretaker. If your primary caretaker has an unexpected illness or emergency, a certified and background-checked backup from your local PawKeep team will cover your scheduled visit, guided by your pet’s digital care profile.'
+    answer: 'Consistency is our priority. If your primary caretaker is unavailable due to illness or scheduling conflict, an authorized backup caretaker from your local team will be assigned to cover your scheduled visit based on your pet’s profile.'
   },
   {
     id: 'farewell-standalone',
     question: 'Is farewell care available separately without an active subscription?',
-    answer: 'Yes. Farewell care is open to any pet family in need, regardless of whether you have an active monthly subscription with PawKeep. Our compassionate end-of-life care coordinators are available 7 days a week to help arrange peaceful in-home euthanasia, gentle aftercare, and bereavement support.'
+    answer: 'Yes. Farewell care is open to any pet family in need, regardless of whether you have an active monthly subscription. Our dedicated end-of-life care coordinators are available to help arrange in-home passing with an independent licensed partner veterinarian, gentle aftercare, and bereavement resources.'
   }
 ];

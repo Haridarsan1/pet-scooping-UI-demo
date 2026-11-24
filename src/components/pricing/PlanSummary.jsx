@@ -73,7 +73,7 @@ export function PlanSummary({
       </div>
 
       <p style={{ margin: 0, fontSize: '13px', color: '#D8D5DA' }}>
-        Billed monthly after your first completed visit.
+        Illustrative monthly rate based on selected frequency.
       </p>
 
       {/* Dashed line */}
@@ -127,7 +127,7 @@ export function PlanSummary({
           color: '#B5B2B9'
         }}
       >
-        Rates are sample prototype configurations. You can adjust frequency or pause visits anytime in your app.
+        Rates are sample prototype configurations. Final service terms and schedules are confirmed prior to account activation.
       </div>
 
       {/* Checkout CTA */}

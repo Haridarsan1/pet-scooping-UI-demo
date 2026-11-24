@@ -38,7 +38,7 @@ export function CheckoutModal({ isOpen, onClose, pricing }) {
       {step === 1 && (
         <div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-            <span className="pk-badge pk-badge-coral">Step 1 of 2: Review Services</span>
+            <span className="pk-badge pk-badge-coral">Step 1 of 3: Plan Review</span>
             <span className="pk-badge pk-badge-prototype">Prototype Checkout</span>
           </div>
 
@@ -114,7 +114,7 @@ export function CheckoutModal({ isOpen, onClose, pricing }) {
               marginBottom: '20px'
             }}
           >
-            <strong>Note:</strong> Billing begins only after your initial service visit is completed. You can modify, pause, or cancel your subscription anytime with zero penalty fees.
+            <strong>Illustrative Prototype:</strong> Rates and line items reflect sample configuration models. Standard billing schedules, visit frequency, and cancellation terms are established upon service verification.
           </div>
 
           <div style={{ display: 'flex', gap: '10px', justifyContent: 'flex-end' }}>
@@ -135,7 +135,7 @@ export function CheckoutModal({ isOpen, onClose, pricing }) {
       {step === 2 && (
         <form onSubmit={handleNext}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-            <span className="pk-badge pk-badge-coral">Step 2 of 2: Service Location</span>
+            <span className="pk-badge pk-badge-coral">Step 2 of 3: Service Location</span>
             <span style={{ fontSize: '13px', color: 'var(--pk-text-muted)' }}>US Addresses</span>
           </div>
 
@@ -240,6 +240,10 @@ export function CheckoutModal({ isOpen, onClose, pricing }) {
 
       {step === 3 && (
         <div style={{ textAlign: 'center', padding: '16px 0' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
+            <span className="pk-badge pk-badge-coral">Step 3 of 3: Demonstration Summary</span>
+            <span className="pk-badge pk-badge-prototype">Simulation</span>
+          </div>
           <div
             style={{
               width: '60px',
@@ -282,8 +286,8 @@ export function CheckoutModal({ isOpen, onClose, pricing }) {
               <strong>{formData.address ? `${formData.address}, ${formData.zip}` : 'Austin, TX'}</strong>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span>Assigned Care Coordinator:</span>
-              <strong>Jamie R. (Demo Coordinator)</strong>
+              <span>Care Team Model:</span>
+              <strong>Dedicated Care Coordinator & Verified Field Specialists</strong>
             </div>
           </div>
 

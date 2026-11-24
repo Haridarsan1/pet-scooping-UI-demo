@@ -201,10 +201,10 @@ export function CommunitySection() {
                     ✓
                   </div>
                   <h3 style={{ margin: '0 0 8px', fontFamily: 'var(--font-brand)', fontSize: '22px' }}>
-                    Proposal Request Received
+                    Demonstration Proposal Form Validated
                   </h3>
                   <p style={{ margin: '0 0 20px', fontSize: '15px', color: '#D8D5DA', lineHeight: 1.6 }}>
-                    Thank you! Our Community Partnerships team has received the request for <strong>{formData.propertyName}</strong> and will follow up with custom pricing at <strong>{formData.workEmail}</strong> within 1 business day.
+                    Frontend inputs for <strong>{formData.propertyName}</strong> were successfully validated locally. As this website is a design prototype without live CRM routing, no proposal inquiry was transmitted and no team follow-up will occur.
                   </p>
                   <div
                     style={{
@@ -217,10 +217,10 @@ export function CommunitySection() {
                       textAlign: 'left'
                     }}
                   >
-                    <strong>Backend Note:</strong> Frontend validation and state cycle completed. Production integration requires routing to the Community CRM Lead Webhook.
+                    <strong>Architecture Note:</strong> In production deployment, this form will connect directly to the commercial accounts webhook or CRM API.
                   </div>
                   <Button variant="secondary" onClick={handleReset}>
-                    Submit Another Inquiry
+                    Reset Demonstration Form
                   </Button>
                 </div>
               ) : (

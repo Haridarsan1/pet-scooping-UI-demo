@@ -13,9 +13,9 @@ export function CareTeam() {
     >
       <div className="pk-container">
         <SectionHeading
-          kicker="Meet the Care Team"
-          title="Trained Caretakers. Dedicated Coordinators. Licensed Vets."
-          subtitle="We never treat pet care like gig work. PawKeep operates with distinct, professional roles to deliver safe, consistent care you can trust."
+          kicker="Care Team Structure"
+          title="Dedicated Caretakers. Care Coordinators. Licensed Vets."
+          subtitle="PawKeep establishes distinct, professional roles to coordinate routine pet-care services and partner medical care."
         />
 
         <div
@@ -72,7 +72,7 @@ export function CareTeam() {
                 </h3>
 
                 <p style={{ margin: '0 0 12px', fontSize: '13px', color: 'var(--pk-coral)', fontWeight: 700 }}>
-                  Representative Role Profile
+                  {role.roleScope}
                 </p>
 
                 <p style={{ margin: '0 0 16px', fontSize: '14px', lineHeight: 1.5, color: 'var(--pk-text-secondary)', flex: 1 }}>
@@ -89,8 +89,7 @@ export function CareTeam() {
                     color: 'var(--pk-text-secondary)'
                   }}
                 >
-                  <div><strong>Qualifications:</strong> {role.experiencePlaceholder}</div>
-                  <div style={{ marginTop: '4px' }}><strong>Specialization:</strong> {role.specialization}</div>
+                  <div><strong>Core Scope:</strong> {role.coreResponsibility}</div>
                 </div>
 
                 {role.regulatoryNote && (
@@ -103,7 +102,7 @@ export function CareTeam() {
           ))}
         </div>
 
-        {/* Transparency note */}
+        {/* Operational Boundary Note */}
         <div
           style={{
             maxWidth: '820px',
@@ -118,7 +117,7 @@ export function CareTeam() {
             lineHeight: 1.5
           }}
         >
-          <strong>Team Transparency:</strong> All PawKeep field caretakers undergo comprehensive identity verification, nationwide criminal background screening, and low-stress animal handling certification. Partner veterinary care is delivered exclusively by independent state-licensed Doctors of Veterinary Medicine (DVM).
+          <strong>Operational Structure:</strong> PawKeep provides care coordination, scheduling logistics, and routine home care through dedicated field providers. Clinical examinations, medical procedures, and prescription care are conducted exclusively by independently licensed Doctors of Veterinary Medicine (DVM) and partner veterinary clinics.
         </div>
       </div>
     </section>

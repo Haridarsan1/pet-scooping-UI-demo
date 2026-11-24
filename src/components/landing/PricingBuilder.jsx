@@ -25,7 +25,8 @@ export function PricingBuilder({ pricing, onProceedToCheckout }) {
     trainingEnabled,
     setTrainingEnabled,
     isDogEligible,
-    isCatEligible
+    isCatEligible,
+    groomPetCount
   } = pricing;
 
   return (
@@ -170,32 +171,37 @@ export function PricingBuilder({ pricing, onProceedToCheckout }) {
                     <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#D8576F' }} />
                     🛁 In-Home Pet Grooming
                   </legend>
-                  <span style={{ fontSize: '12px', color: 'var(--pk-text-muted)' }}>$69 / session</span>
+                  <span style={{ fontSize: '12px', color: 'var(--pk-text-muted)' }}>
+                    $69 / pet per session {groomPetCount > 1 ? `(${groomPetCount} eligible pets)` : ''}
+                  </span>
                 </div>
                 <p style={{ margin: '0 0 10px', fontSize: '13px', color: 'var(--pk-text-secondary)' }}>
                   Warm bath, brush blowout, gentle nail trim and ear cleaning at your home.
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                  {PRICING_CONFIG.services.grooming.frequencies.map((tier) => (
-                    <button
-                      key={tier.value}
-                      type="button"
-                      onClick={() => setGroomFrequency(tier.value)}
-                      style={{
-                        minHeight: '44px',
-                        padding: '0 16px',
-                        borderRadius: '12px',
-                        border: groomFrequency === tier.value ? '2px solid var(--pk-charcoal)' : '1.5px solid var(--pk-border-subtle)',
-                        background: groomFrequency === tier.value ? 'var(--pk-charcoal)' : 'var(--pk-white)',
-                        color: groomFrequency === tier.value ? 'var(--pk-white)' : 'var(--pk-charcoal)',
-                        fontWeight: 700,
-                        fontSize: '13px',
-                        cursor: 'pointer'
-                      }}
-                    >
-                      {tier.label} {tier.monthlyPrice > 0 ? `($${tier.monthlyPrice}/mo)` : ''}
-                    </button>
-                  ))}
+                  {PRICING_CONFIG.services.grooming.frequencies.map((tier) => {
+                    const tierMonthlyPrice = tier.value * (groomPetCount || 1) * PRICING_CONFIG.services.grooming.sessionPricePerPet;
+                    return (
+                      <button
+                        key={tier.value}
+                        type="button"
+                        onClick={() => setGroomFrequency(tier.value)}
+                        style={{
+                          minHeight: '44px',
+                          padding: '0 16px',
+                          borderRadius: '12px',
+                          border: groomFrequency === tier.value ? '2px solid var(--pk-charcoal)' : '1.5px solid var(--pk-border-subtle)',
+                          background: groomFrequency === tier.value ? 'var(--pk-charcoal)' : 'var(--pk-white)',
+                          color: groomFrequency === tier.value ? 'var(--pk-white)' : 'var(--pk-charcoal)',
+                          fontWeight: 700,
+                          fontSize: '13px',
+                          cursor: 'pointer'
+                        }}
+                      >
+                        {tier.label} {tier.value > 0 ? `($${tierMonthlyPrice}/mo)` : ''}
+                      </button>
+                    );
+                  })}
                 </div>
               </fieldset>
 

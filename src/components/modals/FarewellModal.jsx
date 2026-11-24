@@ -42,7 +42,7 @@ export function FarewellModal({ isOpen, onClose }) {
             We have received your message
           </h4>
           <p style={{ margin: '0 0 20px', fontSize: '15px', color: '#574D59', lineHeight: 1.6 }}>
-            Our compassionate care coordinator will call you gently at <strong>{phone}</strong> within 15 minutes.
+            A compassionate PawKeep care coordinator will reach out to <strong>{phone}</strong> to discuss care options, scheduling, and guidance with kindness.
           </p>
           <div
             style={{
@@ -56,7 +56,7 @@ export function FarewellModal({ isOpen, onClose }) {
               textAlign: 'left'
             }}
           >
-            If you need immediate emergency consultation right now, please call our 24/7 care line: <strong>1-800-PAWKEEP</strong> (Demo).
+            <strong>Demonstration Notice:</strong> This modal is a design demonstration. No dispatch or consultation request was transmitted. For urgent medical emergencies, please consult your nearest local emergency veterinary hospital directly.
           </div>
           <Button variant="charcoal" onClick={handleReset} fullWidth>
             Close

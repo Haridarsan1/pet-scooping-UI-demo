@@ -1,11 +1,11 @@
 // Centralized Pricing & Subscription Configuration
-// NOTE: All values are prototype demonstration figures for the US market.
+// NOTE: All values are illustrative prototype demonstration figures for the US market.
 
 export const PRICING_CONFIG = {
   currency: 'USD',
   currencySymbol: '$',
   isPrototype: true,
-  disclaimer: 'All pricing shown represents prototype configurations for product demonstration and planning purposes. Final rates may vary by US service region and property specifications.',
+  disclaimer: 'All pricing shown represents illustrative prototype configurations for demonstration and planning purposes. Final subscription terms, fees, and service availability are established upon official service agreements.',
   
   // Service base rates & frequency tiers
   services: {
@@ -40,20 +40,22 @@ export const PRICING_CONFIG = {
       id: 'grooming',
       name: 'Pet Grooming',
       supportedPets: ['dog', 'cat'],
+      perSessionRate: 69,
+      // Grooming pricing model: Number of eligible pets × Frequency × $69 per session rate
+      pricingModel: 'per_eligible_pet_per_session',
       frequencies: [
         { value: 0, label: 'None', monthlyPrice: 0 },
         { value: 1, label: 'Once a month', monthlyPrice: 69 },
         { value: 2, label: 'Twice a month', monthlyPrice: 138 }
       ],
-      // Grooming is per-pet appointment
-      perSessionRate: 69
+      calculationAssumption: 'Grooming is charged per eligible pet per appointment session ($69/pet/session).'
     },
     veterinary: {
       id: 'veterinary',
       name: 'Home Veterinary Care',
       supportedPets: ['dog', 'cat'],
       monthlyRate: 49,
-      frequencyLabel: 'Quarterly exam + 24/7 vet chat'
+      frequencyLabel: 'Quarterly exam + scheduled partner vet chat'
     },
     training: {
       id: 'training',
@@ -64,10 +66,10 @@ export const PRICING_CONFIG = {
     }
   },
 
-  // One-time setup / initial sanitation fee (waived on annual or during promotions)
+  // One-time setup fee
   initialVisitFee: 0,
 
-  // Sample US metro availability zones
+  // Sample US metro availability zones (Demonstration data)
   coveredZipCodes: [
     { zip: '78701', city: 'Austin', state: 'TX', active: true },
     { zip: '78704', city: 'Austin', state: 'TX', active: true },

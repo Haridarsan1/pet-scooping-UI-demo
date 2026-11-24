@@ -50,11 +50,21 @@ export function usePricing(initialValues = {}) {
   const isDogEligible = petType === 'dog' || petType === 'both';
   const isCatEligible = petType === 'cat' || petType === 'both';
 
+  // Eligible pets for grooming:
+  // Dogs only: dogCount
+  // Cats only: catCount
+  // Both: dogCount + catCount
+  const groomPetCount = useMemo(() => {
+    if (petType === 'both') return Math.max(1, dogCount + catCount);
+    if (petType === 'cat') return Math.max(1, catCount);
+    return Math.max(1, dogCount);
+  }, [petType, dogCount, catCount]);
+
   // Calculations
   const calculations = useMemo(() => {
     const lines = [];
 
-    // 1. Yard Waste Removal
+    // 1. Yard Waste Removal (Dogs only)
     let yardBase = 0;
     let dogExtra = 0;
     if (isDogEligible && yardFrequency > 0) {
@@ -74,7 +84,7 @@ export function usePricing(initialValues = {}) {
       if (dogExtra > 0) {
         lines.push({
           id: 'yard-extra-dogs',
-          service: 'Additional Dogs (Yard)',
+          service: 'Additional Dogs (Yard Scooping)',
           detail: `${extraDogs} additional dog${extraDogs > 1 ? 's' : ''} (+$12/mo each)`,
           monthlyAmount: dogExtra,
           isRecurring: true
@@ -82,7 +92,7 @@ export function usePricing(initialValues = {}) {
       }
     }
 
-    // 2. Litter Box Care
+    // 2. Litter Box Care (Cats only)
     let litterBase = 0;
     let catExtra = 0;
     if (isCatEligible && litterFrequency > 0) {
@@ -103,7 +113,7 @@ export function usePricing(initialValues = {}) {
       if (catExtra > 0) {
         lines.push({
           id: 'litter-extra-cats',
-          service: 'Additional Cats / Boxes',
+          service: 'Additional Cats (Litter Boxes)',
           detail: `${extraCats} additional cat${extraCats > 1 ? 's' : ''} (+$10/mo each)`,
           monthlyAmount: catExtra,
           isRecurring: true
@@ -111,14 +121,16 @@ export function usePricing(initialValues = {}) {
       }
     }
 
-    // 3. Grooming
+    // 3. Grooming: Number of eligible pets × Grooming frequency × Per-session rate ($69)
     let groomAmount = 0;
     if (groomFrequency > 0) {
-      groomAmount = groomFrequency * PRICING_CONFIG.services.grooming.perSessionRate;
+      groomAmount = groomPetCount * groomFrequency * PRICING_CONFIG.services.grooming.perSessionRate;
+      const petLabel = groomPetCount === 1 ? '1 pet' : `${groomPetCount} pets`;
+      const freqLabel = groomFrequency === 1 ? '1 session/mo' : '2 sessions/mo';
       lines.push({
         id: 'grooming',
         service: 'In-Home Pet Grooming',
-        detail: groomFrequency === 1 ? '1 session per month' : '2 sessions per month',
+        detail: `${freqLabel} for ${petLabel} ($69/pet/session)`,
         monthlyAmount: groomAmount,
         isRecurring: true
       });
@@ -131,13 +143,13 @@ export function usePricing(initialValues = {}) {
       lines.push({
         id: 'veterinary',
         service: 'Home Veterinary Care',
-        detail: 'Quarterly exam + 24/7 licensed vet messaging',
+        detail: 'Quarterly exam + scheduled partner vet messaging',
         monthlyAmount: vetAmount,
         isRecurring: true
       });
     }
 
-    // 5. Training
+    // 5. Training (Dogs only)
     let trainAmount = 0;
     if (isDogEligible && trainingEnabled) {
       trainAmount = PRICING_CONFIG.services.training.monthlyRate;
@@ -164,7 +176,7 @@ export function usePricing(initialValues = {}) {
       oneTimeTotal: 0,
       currencySymbol: PRICING_CONFIG.currencySymbol
     };
-  }, [petType, dogCount, catCount, yardFrequency, litterFrequency, groomFrequency, vetEnabled, trainingEnabled, isDogEligible, isCatEligible]);
+  }, [petType, dogCount, catCount, yardFrequency, litterFrequency, groomFrequency, vetEnabled, trainingEnabled, isDogEligible, isCatEligible, groomPetCount]);
 
   return {
     petType,
@@ -187,6 +199,7 @@ export function usePricing(initialValues = {}) {
     setTrainingEnabled,
     isDogEligible,
     isCatEligible,
+    groomPetCount,
     ...calculations
   };
 }

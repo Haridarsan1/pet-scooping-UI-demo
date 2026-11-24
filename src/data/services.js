@@ -5,27 +5,27 @@ export const SERVICES = [
   {
     id: 'yard-waste',
     title: 'Yard Waste Removal',
-    subtitle: 'Recurring dog waste removal & residential lawn sanitization',
+    subtitle: 'Recurring dog waste removal & residential lawn maintenance',
     category: 'Daily Care',
     targetPet: 'dog',
     targetPetLabel: 'Dogs only',
     badge: 'Popular Dog Care',
     image: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=900&q=80',
-    imageAlt: 'Happy golden retriever sitting on clean green suburban lawn',
-    shortDescription: 'Weekly scheduled scooping, debris bagging, and gate sanitization to keep your yard clean, safe, and fresh.',
-    description: 'Never worry about pet waste pickup again. A dedicated PawKeep caretaker clears every corner of your yard on your chosen cadence, bags and hauls away the waste, and checks your gates before leaving.',
+    imageAlt: 'Golden retriever on clean residential lawn',
+    shortDescription: 'Scheduled scooping, debris bagging, and gate latch check to keep your yard clean, safe, and fresh.',
+    description: 'A recurring yard service for dog owners. A dedicated local caretaker clears dog waste across your lawn on your chosen schedule, bags the waste, and confirms your gate latch before departure.',
     benefits: [
-      'Eliminates lawn parasites and bad odors',
-      'Contactless service with photo gate verification',
-      'Free double-check if you spot a missed spot'
+      'Helps maintain cleaner, more hygienic residential lawns',
+      'Time-stamped gate latch verification photo with every visit',
+      'Scheduled recurring cadence tailored to your household'
     ],
     whatsIncluded: [
-      'Full yard walk and waste collection',
-      'Biodegradable bag & off-site disposal',
-      'Gate latch double-check with time-stamped photo',
-      'Pet-safe turf deodorizer spray (optional add-on)'
+      'Full perimeter yard walk and waste collection',
+      'Bagging and off-site disposal',
+      'Gate latch double-check with confirmation photo',
+      'Regular visit summaries in your member dashboard'
     ],
-    pricingExplanation: 'Prototype pricing: from $79/mo (once weekly). Twice-weekly ($139/mo) and 3× weekly ($189/mo) available.',
+    pricingExplanation: 'Illustrative prototype pricing: from $79/mo (once weekly). Twice-weekly ($139/mo) and 3× weekly ($189/mo) available for dog households.',
     isSubscriptionService: true,
     availableFrequencies: [
       { id: '1x_week', label: '1× a week', value: 1, basePrice: 79 },
@@ -36,27 +36,27 @@ export const SERVICES = [
   {
     id: 'litter-care',
     title: 'Litter Box Care',
-    subtitle: 'Recurring indoor cat litter maintenance & deep sanitization',
+    subtitle: 'Recurring indoor cat litter maintenance & box sanitization',
     category: 'Daily Care',
     targetPet: 'cat',
     targetPetLabel: 'Cats only',
     badge: 'Essential Cat Care',
     image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=900&q=80',
-    imageAlt: 'Calm domestic cat resting comfortably indoors',
-    shortDescription: 'Dedicated litter box maintenance, waste removal, and full box sanitization so your home stays fresh and your cat stays healthy.',
-    description: 'Indoor cats need pristine litter conditions for urinary health and calm behavior. Our caretakers perform weekly or bi-weekly scooping, refills with your preferred brand, and periodic deep scrubbing.',
+    imageAlt: 'Domestic cat resting indoors',
+    shortDescription: 'Dedicated litter box maintenance, waste removal, and full box wiping to keep your home fresh and your cat comfortable.',
+    description: 'Indoor cat litter care treated as a dedicated, specialized service. Our caretakers perform scheduled scooping, refill topping, and periodic box washing with pet-safe solutions.',
     benefits: [
-      'Reduces feline respiratory and urinary stress',
-      'Zero heavy litter lifting or unpleasant disposal',
-      'Hospital-grade, cat-safe sanitization'
+      'Maintains clean litter box conditions for indoor feline hygiene',
+      'Routine waste removal without the chore of heavy disposal',
+      'Pet-safe, cat-friendly cleaning products'
     ],
     whatsIncluded: [
-      'Complete litter sifting and waste haul-away',
-      'Litter topping or full clean replacement',
-      'Box wiping with enzymatic feline-safe wash',
-      'Surrounding floor sweep and mat vacuum'
+      'Litter sifting and waste haul-away',
+      'Litter topping with preferred client supply',
+      'Box wiping with pet-safe wash',
+      'Surrounding floor mat sweep'
     ],
-    pricingExplanation: 'Prototype pricing: from $69/mo (once weekly visit). Additional boxes +$10/mo.',
+    pricingExplanation: 'Illustrative prototype pricing: from $69/mo (once weekly visit). Additional cat boxes calculated at +$10/mo.',
     isSubscriptionService: true,
     availableFrequencies: [
       { id: 'biweekly', label: 'Every 2 weeks', value: 0.5, basePrice: 45 },
@@ -73,21 +73,21 @@ export const SERVICES = [
     targetPetLabel: 'Dogs & Cats',
     badge: 'In-Home Comfort',
     image: 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=900&q=80',
-    imageAlt: 'Fluffy dog receiving gentle grooming and coat care',
-    shortDescription: 'Professional bath, blowout, deshedding, nail trims, and ear cleaning done in the comfort of your own home or mobile suite.',
-    description: 'Skip the stress of leaving your pet locked in a noisy commercial salon cage for hours. Our certified groomers come directly to you for quiet, one-on-one pampering tailored to your pet’s temperament.',
+    imageAlt: 'Pet receiving gentle grooming and coat care',
+    shortDescription: 'Gentle bath, blowout, thorough brush-out, nail trims, and ear cleaning conducted in your home.',
+    description: 'One-on-one grooming appointments at home. Avoid car rides and crowded waiting rooms with scheduled bathing, brushing, and basic hygiene care tailored to your companion.',
     benefits: [
-      'Zero stressful car rides or salon waiting cages',
-      'Consistent familiar groomer building trust with your pet',
-      'Custom hypoallergenic and coat-specific botanicals'
+      'Quiet, one-on-one attention in your pet’s familiar surroundings',
+      'Eliminates car transportation stress and waiting cage anxiety',
+      'Gentle coat care, deshedding, and nail trimming'
     ],
     whatsIncluded: [
-      'Warm bath with natural coat-matched shampoo',
-      'Blow-dry, thorough brush-out and deshedding',
+      'Warm bath with coat-appropriate shampoo',
+      'Blow-dry and thorough brush-out',
       'Gentle nail trim and smoothing grind',
-      'Ear cleaning and eye-area cleansing'
+      'Ear cleaning and eye-area wipe'
     ],
-    pricingExplanation: 'Prototype pricing: $69 per session (scheduled 1× or 2× monthly or on-demand).',
+    pricingExplanation: 'Illustrative prototype pricing: $69 per pet per session (scheduled 1× or 2× monthly based on household pet count).',
     isSubscriptionService: true,
     availableFrequencies: [
       { id: 'none', label: 'None', value: 0, basePrice: 0 },
@@ -98,81 +98,81 @@ export const SERVICES = [
   {
     id: 'veterinary',
     title: 'Home Veterinary Care',
-    subtitle: 'Convenient preventative checkups by licensed veterinary professionals',
+    subtitle: 'Preventative wellness checkups conducted by state-licensed partner veterinarians',
     category: 'Clinical Health',
     targetPet: 'both',
     targetPetLabel: 'Dogs & Cats',
     badge: 'Licensed Medical Partner',
     image: 'https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=900&q=80',
-    imageAlt: 'Veterinarian gently examining a calm pet at home',
-    shortDescription: 'Routine physical exams, core vaccinations, and wellness visits on your couch. Services performed by licensed veterinary partners.',
-    description: 'Veterinary care without the panic of crates and clinical waiting rooms. We partner with licensed, vetted local veterinary doctors and technicians who provide routine care where your pet feels safest.',
+    imageAlt: 'Licensed veterinarian examining a calm pet at home',
+    shortDescription: 'Routine physical exams, core vaccinations, and preventative care on your couch. Services delivered by licensed veterinary partners.',
+    description: 'Routine preventative veterinary appointments in your living room. We partner with licensed veterinary practitioners who conduct preventative health assessments where your pet feels calmest.',
     benefits: [
-      'No carrier struggle or frightened pet behavior in clinics',
-      'Longer, unhurried 45-minute wellness consultations',
-      'Digital health history and reminder tracking in your app'
+      'Unhurried wellness consultations in a low-stress home environment',
+      'Reduced carrier and vehicle distress for pets and owners',
+      'Digital health logs and reminder tracking in your member dashboard'
     ],
     whatsIncluded: [
-      'Comprehensive nose-to-tail physical exam',
-      'Core vaccination updates & titer counseling',
-      'Heartworm and parasite preventative review',
-      '24/7 asynchronous telehealth messaging with licensed vet team'
+      'Physical wellness and vital sign examination',
+      'Core vaccination review and updates as recommended',
+      'Parasite prevention counseling',
+      'Telehealth messaging with partner veterinary team during support hours'
     ],
-    pricingExplanation: 'Prototype pricing: $49/mo membership (includes quarterly checkup visit & ongoing vet messaging).',
+    pricingExplanation: 'Illustrative prototype pricing: $49/mo membership (includes quarterly checkup visit & partner veterinary messaging).',
     isSubscriptionService: true,
-    regulatoryDisclosure: 'All clinical medical exams, treatments, and prescriptions are provided exclusively by independently licensed veterinary doctors and partner veterinary clinics within your state.'
+    regulatoryDisclosure: 'All clinical medical exams, diagnostics, treatments, and prescriptions are provided exclusively by independently licensed Doctors of Veterinary Medicine (DVM) and partner veterinary clinics within your state.'
   },
   {
     id: 'training',
     title: 'Pet Training & Manners',
-    subtitle: 'Positive-reinforcement training for calm everyday behavior',
+    subtitle: 'Positive-reinforcement training for everyday household obedience',
     category: 'Enrichment',
     targetPet: 'dog',
     targetPetLabel: 'Dogs (Cat behavior on request)',
-    badge: 'Certified Trainers',
+    badge: 'Structured Training',
     image: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80',
     imageAlt: 'Person practicing positive reinforcement training with attentive dog',
-    shortDescription: 'Two 60-minute in-person sessions a month focused on loose-leash walking, impulse control, polite door manners, and calm greetings.',
-    description: 'Transform daily walks and doorbell chaos into calm, enjoyable routines. Our trainers use humane, science-backed positive reinforcement methods that build confidence and mutual respect.',
+    shortDescription: 'Two 60-minute in-person private sessions a month focusing on loose-leash walking, door manners, and calm greetings.',
+    description: 'Structured positive-reinforcement coaching tailored to your home and neighborhood routines. Build reliable everyday habits with professional guidance for puppies and adult dogs.',
     benefits: [
-      'Real-world training in your neighborhood and home',
-      'Personalized homework plans between monthly sessions',
-      'Great for puppies, rescues, and high-energy companions'
+      'Practical training conducted in your real-world home environment',
+      'Actionable practice exercises between monthly sessions',
+      'Supportive approach for impulse control and leash manners'
     ],
     whatsIncluded: [
-      'Two 60-minute private one-on-one sessions per month',
-      'Customized behavior and milestone progression log',
-      'Direct trainer chat for quick habit troubleshooting',
-      'Family coaching so everyone uses consistent cues'
+      'Two 60-minute private one-on-one training sessions per month',
+      'Progressive skill tracking and milestone notes',
+      'Guidance for family members on consistent cue usage',
+      'Follow-up training summary notes in your dashboard'
     ],
-    pricingExplanation: 'Prototype pricing: $119/mo (includes two 60-minute monthly sessions).',
+    pricingExplanation: 'Illustrative prototype pricing: $119/mo (includes two 60-minute monthly in-home sessions).',
     isSubscriptionService: true
   },
   {
     id: 'farewell',
     title: 'Farewell Care Coordination',
-    subtitle: 'Compassionate end-of-life support, gentle home passing & memorials',
+    subtitle: 'Compassionate end-of-life logistics, gentle home passing & memorials',
     category: 'Specialist Support',
     targetPet: 'both',
     targetPetLabel: 'Dogs & Cats',
-    badge: 'Compassionate Care',
+    badge: 'Compassionate Support',
     image: 'https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=900&q=80',
-    imageAlt: 'Caring pet owner gently comforting an aging pet',
-    shortDescription: 'Gentle, private end-of-life care coordination, licensed in-home veterinary euthanasia, aftercare transport, and family grief counseling.',
-    description: 'Saying goodbye is one of life’s most profound moments. Our dedicated farewell care coordinators handle every arrangement with grace, privacy, and compassion, allowing you to focus on loving your companion.',
+    imageAlt: 'Pet owner gently comforting an aging pet',
+    shortDescription: 'Private end-of-life care coordination, in-home passing delivered by licensed partner vets, gentle transfer, and grief resources.',
+    description: 'Saying goodbye is a profoundly sensitive experience. Our dedicated farewell coordinators help arrange in-home passing with an independent licensed partner veterinarian, dignified aftercare, and bereavement support resources.',
     benefits: [
-      'Peaceful passing at home in your pet’s favorite spot',
-      'Zero clinical paperwork or payment awkwardness at the moment of care',
-      'Ongoing pet-loss grief counseling for children and adults'
+      'Peaceful in-home passing in your pet’s familiar setting',
+      'Respectful coordination of aftercare and transport arrangements',
+      'Access to pet bereavement counseling resources'
     ],
     whatsIncluded: [
-      'Pre-planning consultation with end-of-life coordinator',
-      'Licensed mobile veterinarian visit for peaceful in-home passing',
-      'Gentle transfer to verified pet crematory or cemetery partners',
-      'Custom commemorative keepsakes (clay paw print, hair locket)',
-      'Complimentary sessions with certified pet bereavement counselor'
+      'Consultation with a dedicated farewell care coordinator',
+      'In-home passing conducted by a licensed partner veterinarian',
+      'Gentle transfer to accredited local pet memorial partners',
+      'Commemorative keepsake options (clay paw print, fur clipping)',
+      'Pet loss bereavement guidance resources'
     ],
-    pricingExplanation: 'Handled as dedicated, non-recurring care packages. Pre-planning discounts available for active PawKeep members.',
+    pricingExplanation: 'Arranged as dedicated individual care packages. Inquiries welcome from all pet families regardless of subscription status.',
     isSubscriptionService: false,
     dedicatedSection: true
   }
