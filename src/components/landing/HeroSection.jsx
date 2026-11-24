@@ -342,10 +342,10 @@ export function HeroSection({
             >
               <div>
                 <strong style={{ color: 'var(--pk-sage)', fontSize: '15px' }}>
-                  ✓ Great news! PawKeep is active in ZIP {result.zip} ({result.city})
+                  ✓ Demonstration Match: ZIP {result.zip} ({result.city})
                 </strong>
                 <p style={{ margin: '4px 0 0', fontSize: '13px', color: '#2B5A36' }}>
-                  Yard scooping, litter care, grooming, and licensed home vet visits are all available.
+                  Sample active territory: yard scooping, litter care, grooming, and licensed home vet visits are shown as available in this demonstration model.
                 </p>
               </div>
               <Button variant="charcoal" size="sm" href="#plan" onClick={onBuildPlan}>

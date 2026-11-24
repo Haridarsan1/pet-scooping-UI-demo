@@ -7,7 +7,7 @@ export function WhyPawKeep({ onBuildPlan }) {
     {
       feature: 'Caregiver Familiarity',
       bookingApps: 'Whoever is free that day; random stranger each booking',
-      pawKeep: 'The same dedicated local caretaker every visit'
+      pawKeep: 'The same dedicated caretaker for routine visits, plus licensed partner vets'
     },
     {
       feature: 'Scheduling Effort',

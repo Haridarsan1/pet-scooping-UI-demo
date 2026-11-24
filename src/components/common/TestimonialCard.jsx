@@ -25,7 +25,7 @@ export function TestimonialCard({ testimonial }) {
           </div>
           {testimonial.isDemo && (
             <span className="pk-badge pk-badge-prototype" style={{ fontSize: '10px' }}>
-              Verified Experience
+              Illustrative Scenario
             </span>
           )}
         </div>

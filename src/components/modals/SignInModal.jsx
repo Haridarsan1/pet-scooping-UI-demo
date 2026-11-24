@@ -57,7 +57,7 @@ export function SignInModal({ isOpen, onClose }) {
               textAlign: 'left'
             }}
           >
-            <strong>Note:</strong> Live authentication connects to the active member database once your PawKeep subscription checkout is completed.
+            <strong>Demonstration Notice:</strong> This is a frontend demo interface. No email was transmitted and no live database account was accessed. Full authentication requires backend identity provider integration.
           </div>
           <Button variant="charcoal" onClick={handleReset} fullWidth>
             Return to PawKeep

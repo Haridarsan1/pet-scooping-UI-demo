@@ -299,7 +299,7 @@ export function CheckoutModal({ isOpen, onClose, pricing }) {
               textAlign: 'left'
             }}
           >
-            <strong>Backend API Requirement:</strong> This completes the frontend subscription checkout demonstration. Production deployment requires connecting Stripe Subscription Billing and the Caregiver Dispatch API.
+            <strong>Demonstration Notice:</strong> This is an interactive frontend simulation. No payment method was charged, no financial transaction occurred, and no live account has been created. Production rollout requires connecting verified Stripe Subscription Billing and dispatcher APIs.
           </div>
 
           <Button variant="charcoal" onClick={handleReset} fullWidth>

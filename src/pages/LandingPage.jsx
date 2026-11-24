@@ -196,7 +196,7 @@ export function LandingPage() {
             </span>
             <div style={{ minWidth: 0 }}>
               <strong style={{ fontSize: '14px', display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                {pricing.petName ? `${pricing.petName}’s Plan` : 'Your Care Plan'} ({pricing.activeServicesCount} services)
+                {pricing.petName ? `${pricing.petName}’s Plan` : 'Your Care Plan'} ({pricing.activeServicesCount} {pricing.activeServicesCount === 1 ? 'service' : 'services'})
               </strong>
               <span style={{ fontSize: '13px', color: '#D8D5DA' }}>
                 ${pricing.monthlyTotal}/month
