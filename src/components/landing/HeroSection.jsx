@@ -174,13 +174,13 @@ export function HeroSection({
             {/* Key trust bullets */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', fontSize: '13px', color: 'var(--pk-text-secondary)', fontWeight: 600 }}>
               <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <span style={{ color: 'var(--pk-coral)', fontSize: '16px' }}>✓</span> Consistent familiar team
+                <span style={{ color: 'var(--pk-coral)', fontSize: '16px' }}>✓</span> Coordinated care model
               </span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <span style={{ color: 'var(--pk-coral)', fontSize: '16px' }}>✓</span> Licensed partner veterinarians
               </span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <span style={{ color: 'var(--pk-coral)', fontSize: '16px' }}>✓</span> Month-to-month flexibility
+                <span style={{ color: 'var(--pk-coral)', fontSize: '16px' }}>✓</span> Transparent monthly pricing
               </span>
             </div>
           </div>

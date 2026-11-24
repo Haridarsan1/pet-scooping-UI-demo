@@ -48,7 +48,7 @@ export function WhyPawKeep({ onBuildPlan }) {
         <SectionHeading
           kicker="Why PawKeep"
           title="Less Coordination. More Care. That’s PawKeep."
-          subtitle="Booking apps find you a temporary sitter. PawKeep gives you a dedicated, coordinated care team who knows your pet by name."
+          subtitle="Rather than coordinating independent providers across multiple platforms, PawKeep is designed to unite your pet’s routine care under one coordinated monthly subscription."
         />
 
         {/* 2-Column Comparison Layout */}

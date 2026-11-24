@@ -41,7 +41,7 @@ export function PricingBuilder({ pricing, onProceedToCheckout }) {
         <SectionHeading
           kicker="Personalized Pricing Builder"
           title="Customize Your Plan. See Your Price in Real Time."
-          subtitle="Select your pets and tailor your services. Pay only for the care you need with transparent, month-to-month pricing."
+          subtitle="Select your pets and configure your routine services. Explore sample monthly pricing tailored to your household."
         />
 
         {/* 2-Column Bento: Configuration on Left, Live Summary on Right */}

@@ -5,12 +5,12 @@ export function TrustIndicators() {
     {
       icon: '🛡️',
       title: 'Coordinated Care',
-      description: 'One dedicated local team handles scheduling, gates, and routine visits.'
+      description: 'A unified team approach for routine visits and care coordination.'
     },
     {
       icon: '🔄',
       title: 'Flexible Plans',
-      description: 'Month-to-month subscription. Adjust services, change frequency, or pause anytime.'
+      description: 'Customizable subscription plans. Tailor services and frequencies to your pet’s needs.'
     },
     {
       icon: '🩺',
@@ -20,7 +20,7 @@ export function TrustIndicators() {
     {
       icon: '📱',
       title: 'Convenient Scheduling',
-      description: 'Photo gate verification, arrival alerts, and central digital visit history.'
+      description: 'Centralized care logs, service notes, and communication in one portal.'
     }
   ];
 

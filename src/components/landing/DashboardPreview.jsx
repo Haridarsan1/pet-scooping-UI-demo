@@ -16,7 +16,7 @@ export function DashboardPreview() {
         <SectionHeading
           kicker="Customer Experience"
           title="Your Complete Care Hub. Everything in One Place."
-          subtitle="Preview the PawKeep member experience. Track upcoming visits, review completed visit notes, message your Care Coordinator, and review your subscription details with total clarity."
+          subtitle="Demonstration preview of the proposed PawKeep member hub concept, illustrating planned visit tracking, care notes, coordinator communication, and plan summaries."
         />
 
         {/* Dashboard Showcase Mockup Window */}
@@ -165,7 +165,7 @@ export function DashboardPreview() {
                     Caretaker: <strong>Assigned Field Caretaker</strong> • Gate Code: #404-Side
                   </p>
                   <div style={{ fontSize: '12px', color: '#6A6870', borderTop: '1px solid var(--pk-border-subtle)', paddingTop: '10px' }}>
-                    Auto-alert enabled: You will receive a time-stamped photo once the gate is securely locked.
+                    Visit protocol: Caretaker verifies exterior gate latch upon completion of yard scooping.
                   </div>
                 </div>
 
@@ -197,7 +197,7 @@ export function DashboardPreview() {
                     Partner: <strong>Licensed Partner Clinic</strong> • Living room checkup
                   </p>
                   <div style={{ fontSize: '12px', color: '#6A6870', borderTop: '1px solid var(--pk-border-subtle)', paddingTop: '10px' }}>
-                    Includes core booster updates & digital preventative health log.
+                    Routine wellness consultation and preventative care coordination with licensed clinic.
                   </div>
                 </div>
               </div>
@@ -214,7 +214,7 @@ export function DashboardPreview() {
                       Completed by Assigned Field Caretaker • Full perimeter walk & sanitization
                     </p>
                   </div>
-                  <span className="pk-badge pk-badge-sage">✓ Passed Verification</span>
+                  <span className="pk-badge pk-badge-sage">✓ Sample Report</span>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px', marginTop: '16px' }}>
@@ -224,7 +224,7 @@ export function DashboardPreview() {
                   </div>
                   <div style={{ padding: '14px', borderRadius: '12px', background: 'var(--pk-cream)', fontSize: '13px' }}>
                     <strong>Gate Latch Check:</strong>
-                    <p style={{ margin: '4px 0 0', color: 'var(--pk-text-secondary)' }}>Dual padlock engaged. Photo confirmation uploaded.</p>
+                    <p style={{ margin: '4px 0 0', color: 'var(--pk-text-secondary)' }}>Gate latch verified securely latched before departure.</p>
                   </div>
                   <div style={{ padding: '14px', borderRadius: '12px', background: 'var(--pk-cream)', fontSize: '13px' }}>
                     <strong>Pet Observation:</strong>
@@ -239,7 +239,7 @@ export function DashboardPreview() {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
                   <div>
                     <h5 style={{ margin: 0, fontFamily: 'var(--font-brand)', fontSize: '16px' }}>
-                      Current Subscription: Coordinated Monthly Plan
+                      Sample Plan Breakdown: Coordinated Monthly Care
                     </h5>
                     <p style={{ margin: '4px 0 0', fontSize: '13px', color: 'var(--pk-text-secondary)' }}>
                       Demonstration billing cycle • Illustrative recurring plan breakdown
@@ -263,8 +263,8 @@ export function DashboardPreview() {
                     <strong>$69.00/mo</strong>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px', color: 'var(--pk-sage)' }}>
-                    <span>Initial Sanitization Promo</span>
-                    <strong>$0.00 (Waived)</strong>
+                    <span>Sample First-Month Savings</span>
+                    <strong>-$15.00 (Demo Promo)</strong>
                   </div>
                 </div>
               </div>

@@ -172,7 +172,7 @@ export const SERVICES = [
       'Commemorative keepsake options (clay paw print, fur clipping)',
       'Pet loss bereavement guidance resources'
     ],
-    pricingExplanation: 'Arranged as dedicated individual care packages. Inquiries welcome from all pet families regardless of subscription status.',
+    pricingExplanation: 'Arranged as dedicated care coordination packages. Specific options and scheduling are confirmed upon consultation.',
     isSubscriptionService: false,
     dedicatedSection: true
   }

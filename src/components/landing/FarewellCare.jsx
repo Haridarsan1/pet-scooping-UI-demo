@@ -112,11 +112,8 @@ export function FarewellCare({ onOpenFarewellModal }) {
             </Button>
           </div>
 
-          <p style={{ margin: 0, fontSize: '14px', color: '#6A5F6D' }}>
-            Available to all pet families 7 days a week • No active subscription required
-          </p>
-          <p style={{ margin: '6px 0 0', fontSize: '12px', color: '#877B8A' }}>
-            Notice: PawKeep provides care coordination and grief support resources. In-home clinical veterinary euthanasia is performed exclusively by independent licensed veterinary professionals.
+          <p style={{ margin: 0, fontSize: '13px', color: '#6A5F6D', maxWidth: '640px', lineHeight: 1.5 }}>
+            Notice: PawKeep provides care coordination and grief support navigation. In-home clinical veterinary services and euthanasia are performed exclusively by independent licensed veterinary professionals.
           </p>
         </div>
       </div>

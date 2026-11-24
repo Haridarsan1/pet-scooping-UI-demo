@@ -149,7 +149,7 @@ export function Footer({ onOpenSignIn }) {
           <span>© {new Date().getFullYear()} PawKeep Inc. All rights reserved.</span>
           <div style={{ display: 'flex', gap: '20px' }}>
             <span>Built for US Pet Care</span>
-            <span>Month-to-month flexibility</span>
+            <span>Transparent pricing</span>
           </div>
         </div>
       </div>
