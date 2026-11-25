@@ -347,6 +347,31 @@ export function StoryScroll({ petName: globalPetName, petType: globalPetType }) 
                         {c.body}
                       </p>
 
+                      {cards[i] && (
+                        <div style={{ marginTop: '14px', display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                          {cards[i].items.map((it, idx) => (
+                            <span
+                              key={idx}
+                              style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '6px',
+                                padding: '5px 12px',
+                                borderRadius: '999px',
+                                background: '#FFFFFF',
+                                border: '1px solid #ECE7E9',
+                                fontSize: '13px',
+                                fontWeight: 700,
+                                color: '#3E3540',
+                                boxShadow: '0 1px 3px rgba(0,0,0,0.04)'
+                              }}
+                            >
+                              <span style={{ color: '#2E7D32', fontWeight: 900 }}>✓</span> {it}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
                       {c.askName && (
                         <div
                           className="pk-story-personalize"
@@ -784,44 +809,36 @@ export function StoryScroll({ petName: globalPetName, petType: globalPetType }) 
                   </div>
                 </div>
 
-                {/* Status Badge in Scene 1 */}
+                {/* Status Pill in Scene 1 */}
                 <div
-                  style={sx(`position: absolute; left: 16px; top: 16px; z-index: 8; display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 14px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); box-shadow: 0 8px 24px rgba(0,0,0,.25); transition: opacity .5s ease; ${show(ch === 1)}`)}
+                  style={sx(`position: absolute; left: 16px; top: 16px; z-index: 8; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; background: rgba(35,35,38,0.78); backdrop-filter: blur(8px); color: #FFFFFF; font-size: 12px; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: opacity .4s ease; ${show(ch === 1)}`)}
                 >
-                  <span style={{ width: '34px', height: '34px', borderRadius: '10px', background: '#C2415B', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '12px' }}>
-                    PK
-                  </span>
-                  <span style={{ fontSize: '13px', lineHeight: 1.35, color: '#232326' }}>
-                    <strong>{isCat ? 'Litter care in progress' : 'Care team is scooping'}</strong><br />
-                    {piles === 0 ? (isCat ? 'Box refreshed & sanitized' : 'Yard is spotless! Waste hauled.') : (isCat ? 'Sanitizing & refreshing box' : `${piles} areas cleared & hauled`)}
-                  </span>
+                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: piles === 0 ? '#4CAF50' : '#FF9800', display: 'inline-block' }} />
+                  <span>{isCat ? (piles === 0 ? 'Box refreshed & sanitized' : 'Sanitizing & refreshing box') : (piles === 0 ? 'Yard is spotless! Waste hauled.' : `${piles} areas cleared & hauled`)}</span>
                 </div>
 
-                {/* Service Card In Scenes 2, 3, 4 */}
-                {stCard && (
+                {/* Subtle Kicker Chip in Scenes 2-5 */}
+                {ch >= 2 && (
                   <div
-                    style={sx(`position: absolute; right: 16px; top: 16px; z-index: 8; width: min(240px, 48%); padding: 14px; border-radius: 16px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); box-shadow: 0 10px 28px rgba(0,0,0,.25); transition: opacity .5s ease; ${show(!!stCard)}`)}
+                    style={{
+                      position: 'absolute',
+                      right: '16px',
+                      top: '16px',
+                      zIndex: 8,
+                      padding: '5px 12px',
+                      borderRadius: '8px',
+                      background: 'rgba(35,35,38,0.72)',
+                      backdropFilter: 'blur(6px)',
+                      color: '#FFFFFF',
+                      fontSize: '11px',
+                      fontWeight: 800,
+                      letterSpacing: '0.5px',
+                      textTransform: 'uppercase',
+                      transition: 'opacity 0.4s ease',
+                      pointerEvents: 'none'
+                    }}
                   >
-                    <p style={{ margin: 0, fontSize: '11px', fontWeight: 800, color: '#C2415B', textTransform: 'uppercase', letterSpacing: '0.5px' }}>{stCard.k}</p>
-                    <p style={{ margin: '4px 0 8px', fontFamily: 'var(--font-brand)', fontWeight: 700, fontSize: '15px', color: '#232326' }}>{stCard.t}</p>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
-                      {stCard.items.map((it, idx) => (
-                        <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', fontWeight: 700, color: '#4B4A50' }}>
-                          <span style={{ color: '#2E7D32', fontWeight: 900 }}>✓</span> {it}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Scene 5 Plan Badge */}
-                {ch === 5 && (
-                  <div
-                    style={sx(`position: absolute; left: 16px; bottom: 16px; z-index: 8; padding: 10px 16px; border-radius: 12px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); box-shadow: 0 8px 24px rgba(0,0,0,.25); transition: opacity .5s ease; ${show(ch === 5)}`)}
-                  >
-                    <span style={{ fontSize: '13px', fontWeight: 800, color: '#232326' }}>
-                      Everything {poss} needs in one flexible plan
-                    </span>
+                    {chData[ch]?.kicker}
                   </div>
                 )}
               </div>

@@ -154,7 +154,7 @@ export function ServiceCard({ service, onLearnMore, onAddToPlan }) {
               href="#farewell"
               style={{ flex: 1 }}
             >
-              Learn More
+              Explore Care
             </Button>
           )}
         </div>

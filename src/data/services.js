@@ -156,8 +156,8 @@ export const SERVICES = [
     targetPet: 'both',
     targetPetLabel: 'Dogs & Cats',
     badge: 'Compassionate Support',
-    image: 'https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=900&q=80',
-    imageAlt: 'Pet owner gently comforting an aging pet',
+    image: 'https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'Loving pet resting peacefully with comforting companion',
     shortDescription: 'Private end-of-life care coordination, in-home passing delivered by licensed partner vets, gentle transfer, and grief resources.',
     description: 'Saying goodbye is a profoundly sensitive experience. Our dedicated farewell coordinators help arrange in-home passing with an independent licensed partner veterinarian, dignified aftercare, and bereavement support resources.',
     benefits: [

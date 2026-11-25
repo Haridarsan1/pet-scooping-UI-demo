@@ -157,66 +157,70 @@ export function LandingPage() {
       {/* Floating Plan Quick-Bar (Visible when services are selected) */}
       {pricing.activeServicesCount > 0 && (
         <div
-          className="pk-pop"
           style={{
             position: 'fixed',
-            left: '50%',
-            bottom: '20px',
-            transform: 'translateX(-50%)',
+            bottom: '16px',
+            left: '12px',
+            right: '12px',
+            margin: '0 auto',
+            maxWidth: '560px',
+            width: 'calc(100% - 24px)',
+            boxSizing: 'border-box',
             zIndex: 80,
-            width: 'min(620px, calc(100% - 32px))',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            gap: '14px',
-            padding: '12px 14px 12px 20px',
-            borderRadius: '20px',
+            gap: '10px',
+            padding: '10px 14px',
+            borderRadius: '18px',
             background: 'var(--pk-charcoal)',
             color: 'var(--pk-white)',
-            boxShadow: 'var(--shadow-float)'
+            boxShadow: '0 12px 36px rgba(0,0,0,0.35)'
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', minWidth: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', minWidth: 0, flex: '1 1 auto' }}>
             <span
               style={{
-                width: '38px',
-                height: '38px',
-                borderRadius: '12px',
+                width: '34px',
+                height: '34px',
+                borderRadius: '10px',
                 background: 'var(--pk-blush)',
                 color: 'var(--pk-charcoal)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 fontWeight: 800,
-                fontSize: '15px',
+                fontSize: '14px',
                 flexShrink: 0
               }}
             >
               {pricing.activeServicesCount}
             </span>
-            <div style={{ minWidth: 0 }}>
-              <strong style={{ fontSize: '14px', display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            <div style={{ minWidth: 0, overflow: 'hidden' }}>
+              <strong style={{ fontSize: '13px', display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                 {pricing.petName ? `${pricing.petName}’s Plan` : 'Your Care Plan'} ({pricing.activeServicesCount} {pricing.activeServicesCount === 1 ? 'service' : 'services'})
               </strong>
-              <span style={{ fontSize: '13px', color: '#D8D5DA' }}>
+              <span style={{ fontSize: '12px', color: '#D8D5DA' }}>
                 ${pricing.monthlyTotal}/month
               </span>
             </div>
           </div>
 
-          <div style={{ display: 'flex', gap: '8px', flexShrink: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
             <a
               href="#plan"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                padding: '0 16px',
-                minHeight: '42px',
-                borderRadius: '12px',
+                justifyContent: 'center',
+                padding: '0 12px',
+                minHeight: '38px',
+                borderRadius: '10px',
                 background: 'rgba(255, 255, 255, 0.14)',
                 color: 'var(--pk-white)',
                 fontWeight: 700,
-                fontSize: '13px'
+                fontSize: '13px',
+                textDecoration: 'none'
               }}
             >
               Edit
@@ -227,14 +231,17 @@ export function LandingPage() {
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                padding: '0 18px',
-                minHeight: '42px',
-                borderRadius: '12px',
+                justifyContent: 'center',
+                padding: '0 14px',
+                minHeight: '38px',
+                borderRadius: '10px',
+                border: 'none',
                 background: 'var(--pk-coral)',
                 color: 'var(--pk-white)',
                 fontWeight: 800,
                 fontSize: '13px',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                whiteSpace: 'nowrap'
               }}
             >
               Subscribe →
